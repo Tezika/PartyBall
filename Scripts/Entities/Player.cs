@@ -70,7 +70,7 @@ namespace PartyBall.Scripts.Entities
             base.Draw(batch);
         }
 
-        private void UpdatePosition(KeyboardState state)
+        private void  UpdatePosition(KeyboardState state)
         {
             if (state.IsKeyDown(Keys.Up))
             {

@@ -5,6 +5,8 @@ namespace PartyBall.Scripts.Entities
 {
     public class GameObject
     {
+        public BoundingBox bounding { get; set; }
+
         public GameObject()
         {
 
