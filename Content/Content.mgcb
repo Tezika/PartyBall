@@ -23,9 +23,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:ball (1).png
-=======
 /build:ball (1).png;ball.png
->>>>>>> e88d684c87e901ed51a73bc2c27a60c6c6c47b29
 
