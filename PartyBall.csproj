@@ -45,7 +45,11 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\Player.cs" />
+    <Compile Include="Scripts\Entities\GameObject.cs" />
+    <Compile Include="Scripts\Entities\Platform.cs" />
+    <Compile Include="Scripts\Entities\Player.cs" />
+    <Compile Include="Scripts\Entities\RegularPlatform.cs" />
+    <Compile Include="Scripts\Entities\StickyPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

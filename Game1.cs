@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts;
+using PartyBall.Scripts.Entities;
 
 namespace PartyBall
 {

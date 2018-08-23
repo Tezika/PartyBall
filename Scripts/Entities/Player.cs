@@ -3,9 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-namespace PartyBall.Scripts
+namespace PartyBall.Scripts.Entities
 {
-    public class Player
+    public class Player : GameObject
     {
         public Texture2D texture { get; private set; }
 
@@ -35,19 +35,19 @@ namespace PartyBall.Scripts
 
         public float moveSpeed { get; set; }
 
-        public Player()
+        public Player(): base()
         {
             Console.WriteLine("The player has been initiated");
         }
 
-        public void Initialize(Texture2D texture, Vector2 position)
+        public override void Initialize(Texture2D texture, Vector2 position)
         {
+            base.Initialize(texture, position);
             this.texture = texture;
             this.position = position;
             this.active = true;
             this.health = 100;
             this.moveSpeed = 10.0f;
-
         }
 
         //update the player's logic
@@ -56,8 +56,7 @@ namespace PartyBall.Scripts
             this.UpdatePosition(Keyboard.GetState());
         }
 
-
-        public void Draw(SpriteBatch batch)
+        public override void Draw(SpriteBatch batch)
         {
             batch.Draw(this.texture,
                 this.position,
@@ -68,6 +67,7 @@ namespace PartyBall.Scripts
                 1f,
                 SpriteEffects.None,
                 0f);
+            base.Draw(batch);
         }
 
         private void UpdatePosition(KeyboardState state)
