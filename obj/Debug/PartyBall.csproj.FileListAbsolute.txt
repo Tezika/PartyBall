@@ -38,3 +38,4 @@ C:\Users\u1216510\source\repos\PartyBall\PartyBall\obj\Debug\PartyBall.csproj.Co
 C:\Users\u1216510\source\repos\PartyBall\PartyBall\obj\Debug\PartyBall.exe
 C:\Users\u1216510\source\repos\PartyBall\PartyBall\obj\Debug\PartyBall.pdb
 C:\Users\u1216510\source\repos\PartyBall\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\ball.xnb
+C:\Users\u1216510\source\repos\PartyBall\PartyBall\obj\Debug\PartyBall.csprojAssemblyReference.cache
