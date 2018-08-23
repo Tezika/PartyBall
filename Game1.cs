@@ -15,8 +15,8 @@ namespace PartyBall
         public SpriteBatch spriteBatch;
 
         public Player player;
-        
-        public Game1()            
+
+        public Game1()
         {
             this.graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
@@ -34,6 +34,11 @@ namespace PartyBall
 
             base.Initialize();
             this.player = new Player();
+
+            // Load the player resources
+
+            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
+            this.player.Initialize(Content.Load<Texture2D>("ball"), playerPosition);
         }
 
         /// <summary>
@@ -44,7 +49,6 @@ namespace PartyBall
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             this.spriteBatch = new SpriteBatch(GraphicsDevice);
-            this.player.Initialize();
 
             // TODO: use this.Content to load your game content here
         }
@@ -70,6 +74,7 @@ namespace PartyBall
 
             // TODO: Add your update logic here
             this.player.Update();
+
             base.Update(gameTime);
         }
 
@@ -82,7 +87,9 @@ namespace PartyBall
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            this.spriteBatch.Begin();
+            this.player.Draw(this.spriteBatch);
+            this.spriteBatch.End();
             base.Draw(gameTime);
         }
     }
