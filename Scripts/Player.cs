@@ -1,58 +1,93 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 
 namespace PartyBall.Scripts
 {
     public class Player
     {
-        public Texture2D playerTexture { get; private set; }
+        public Texture2D texture { get; private set; }
 
-        public Vector2 playerPosition { get; internal set; }
+        public Vector2 position { get; internal set; }
 
         public bool active { get; private set; }
 
         public float health { get; private set; }
 
-        public int width {
-            get {
-                return (this.playerTexture == null ? 0 : this.playerTexture.Width);
-            }
-        }
-        
-        public int height {
-            get {
-                return (this.playerTexture == null ? 0 : this.playerTexture.Height);
+        public KeyboardState keyboardState { get; private set; }
+
+        public int width
+        {
+            get
+            {
+                return (this.texture == null ? 0 : this.texture.Width);
             }
         }
 
-        public Player() {
+        public int height
+        {
+            get
+            {
+                return (this.texture == null ? 0 : this.texture.Height);
+            }
+        }
+
+        public float moveSpeed { get; set; }
+
+        public Player()
+        {
             Console.WriteLine("The player has been initiated");
         }
 
-        public void Initialize(Texture2D texture, Vector2 position) {
-            this.playerTexture = texture;
-            this.playerPosition = position;
+        public void Initialize(Texture2D texture, Vector2 position)
+        {
+            this.texture = texture;
+            this.position = position;
             this.active = true;
             this.health = 100;
-            
+            this.moveSpeed = 10.0f;
+
         }
 
         //update the player's logic
-        public void Update() {
+        public void Update()
+        {
+            this.UpdatePosition(Keyboard.GetState());
         }
 
 
-        public void Draw(SpriteBatch batch) {
-            batch.Draw(this.playerTexture, 
-                this.playerPosition, 
-                null, 
-                Color.White, 
+        public void Draw(SpriteBatch batch)
+        {
+            batch.Draw(this.texture,
+                this.position,
+                null,
+                Color.White,
                 0f,
-                Vector2.Zero, 
+                Vector2.Zero,
                 1f,
-                SpriteEffects.None, 
+                SpriteEffects.None,
                 0f);
-       }
+        }
+
+        private void UpdatePosition(KeyboardState state)
+        {
+            if (state.IsKeyDown(Keys.Up))
+            {
+                this.position = new Vector2(this.position.X, this.position.Y - this.moveSpeed);
+            }
+            else if (state.IsKeyDown(Keys.Down))
+            {
+                this.position = new Vector2(this.position.X, this.position.Y + this.moveSpeed);
+            }
+            else if (state.IsKeyDown(Keys.Left))
+            {
+                this.position = new Vector2(this.position.X - this.moveSpeed, this.position.Y);
+            }
+            else if (state.IsKeyDown(Keys.Right))
+            {
+                this.position = new Vector2(this.position.X + this.moveSpeed, this.position.Y);
+            }
+        }
     }
 }
