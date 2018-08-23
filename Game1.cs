@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using PartyBall.Scripts;
 
 namespace PartyBall
 {
@@ -9,8 +10,11 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public GraphicsDeviceManager graphics;
+
+        public SpriteBatch spriteBatch;
+
+        public Player player;
         
         public Game1()            
         {
@@ -29,7 +33,7 @@ namespace PartyBall
             // TODO: Add your initialization logic here
 
             base.Initialize();
-            
+            this.player = new Player();
         }
 
         /// <summary>
@@ -40,6 +44,7 @@ namespace PartyBall
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             this.spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.player.Initialize();
 
             // TODO: use this.Content to load your game content here
         }
@@ -64,7 +69,7 @@ namespace PartyBall
                 Exit();
 
             // TODO: Add your update logic here
-
+            this.player.Update();
             base.Update(gameTime);
         }
 
