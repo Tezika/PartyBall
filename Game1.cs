@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Singleton;
 
 namespace PartyBall
 {
@@ -10,15 +11,11 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
-        public GraphicsDeviceManager graphics;
-
-        public SpriteBatch spriteBatch;
-
-        public Player player;
+        public Character Character;
 
         public Game1()
         {
-            this.graphics = new GraphicsDeviceManager(this);
+            RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
         }
 
@@ -31,14 +28,9 @@ namespace PartyBall
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
-            this.player = new Player();
+            this.Character.Initialize();
 
-            // Load the player resources
-
-            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
-            this.player.Initialize(Content.Load<Texture2D>("ball"), playerPosition);
         }
 
         /// <summary>
@@ -48,9 +40,14 @@ namespace PartyBall
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            this.spriteBatch = new SpriteBatch(GraphicsDevice);
+            RenderManager.Instance.Setup(this);
 
             // TODO: use this.Content to load your game content here
+            // Load the player resources
+            this.Character = new Character(Content.Load<Texture2D>("ball"), new Vector2(
+               GraphicsDevice.Viewport.TitleSafeArea.X,
+               GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2
+           ));
         }
 
         /// <summary>
@@ -73,8 +70,7 @@ namespace PartyBall
                 Exit();
 
             // TODO: Add your update logic here
-            this.player.Update();
-
+            this.Character.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -85,11 +81,8 @@ namespace PartyBall
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             // TODO: Add your drawing code here
-            this.spriteBatch.Begin();
-            this.player.Draw(this.spriteBatch);
-            this.spriteBatch.End();
+            RenderManager.Instance.DrawGameObject(this.Character);
             base.Draw(gameTime);
         }
     }
