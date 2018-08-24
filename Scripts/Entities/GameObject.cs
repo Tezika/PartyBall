@@ -2,9 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace PartyBall.Scripts.Entities 
+namespace PartyBall.Scripts.Entities
 {
-    public class GameObject: IUpdateable, IDrawable
+    public class GameObject : IUpdateable, IDrawable
     {
         public string Tag { get; private set; }
 
@@ -50,7 +50,7 @@ namespace PartyBall.Scripts.Entities
         {
             get
             {
-                return new Vector2(this.Position.X + this.Width / 2, this.Position.Y + this.Height / 2);
+                return new Vector2(this.Width / 2, this.Height / 2);
             }
         }
 
@@ -65,7 +65,7 @@ namespace PartyBall.Scripts.Entities
 
         public virtual void Initialize()
         {
-        
+
         }
 
         public virtual void LoadContent()

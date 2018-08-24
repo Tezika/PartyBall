@@ -52,7 +52,7 @@ namespace PartyBall.Scripts.Singleton
                                   color: Color.White,
                                   rotation: 0.0f,
                                   scale: gameObject.Scale,
-                                  origin: Vector2.Zero,
+                                  origin: gameObject.Origin,
                                   effects:SpriteEffects.None,
                                   layerDepth: 1.0f
                                   );
