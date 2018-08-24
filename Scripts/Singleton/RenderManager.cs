@@ -4,7 +4,8 @@ using PartyBall.Scripts.Entities;
 
 namespace PartyBall.Scripts.Singleton
 {
-    //cite from the http://csharpindepth.com/Articles/General/Singleton.aspx, perhaps need to review it one day.
+    //Cite this from the http://csharpindepth.com/Articles/General/Singleton.aspx, perhaps need to review it one day.
+    //This singlton serves for handling the rendering stuff.
     public sealed class RenderManager
     {
         private static readonly RenderManager instance = new RenderManager();

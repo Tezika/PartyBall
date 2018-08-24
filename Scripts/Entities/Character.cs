@@ -16,7 +16,7 @@ namespace PartyBall.Scripts.Entities
 
         private float _Scale = 1.0f;
 
-        public float Scale 
+        public float Scale
         {
             get
             {
@@ -26,7 +26,7 @@ namespace PartyBall.Scripts.Entities
             {
                 _Scale = value;
                 //if own texture has already been assigned, then scale it.
-                if(this.Texture != null)
+                if (this.Texture != null)
                 {
 
                 }
@@ -48,13 +48,13 @@ namespace PartyBall.Scripts.Entities
         public override void Update(GameTime gameTime)
         {
             this.UpdatePosition(Keyboard.GetState());
-            if(this.CurrentMoveState != null)
+            if (this.CurrentMoveState != null)
             {
                 this.CurrentMoveState.Update(gameTime);
             }
             base.Update(gameTime);
         }
-        
+
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
@@ -62,7 +62,7 @@ namespace PartyBall.Scripts.Entities
 
         public void TranslateMoveState(MoveType type)
         {
-            if(this.CurrentMoveState != null)
+            if (this.CurrentMoveState != null)
             {
                 this.CurrentMoveState.OnExit();
             }
