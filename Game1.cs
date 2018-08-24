@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Singleton;
 
 namespace PartyBall
 {
@@ -11,15 +11,11 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
-        public GraphicsDeviceManager Graphics;
-
-        public SpriteBatch SpriteBatch;
-
         public Character Character;
 
         public Game1()
         {
-            this.Graphics = new GraphicsDeviceManager(this);
+            RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
         }
 
@@ -32,7 +28,6 @@ namespace PartyBall
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
             this.Character.Initialize();
 
@@ -45,7 +40,7 @@ namespace PartyBall
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            this.SpriteBatch = new SpriteBatch(GraphicsDevice);
+            RenderManager.Instance.Setup(this);
 
             // TODO: use this.Content to load your game content here
             // Load the player resources
@@ -86,21 +81,9 @@ namespace PartyBall
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             // TODO: Add your drawing code here
-            this.SpriteBatch.Begin();
-            this.DrawGameobject(this.Character);
-            this.SpriteBatch.End();
+            RenderManager.Instance.DrawGameObject(this.Character);
             base.Draw(gameTime);
-        }
-
-        private void DrawGameobject(GameObject go)
-        {
-            if (!go.Visible)
-            {
-                return;
-            }
-            this.SpriteBatch.Draw(go.Texture, go.Position, Color.White);
         }
     }
 }

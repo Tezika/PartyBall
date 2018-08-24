@@ -14,6 +14,25 @@ namespace PartyBall.Scripts.Entities
 
         public CharacterMoveState[] MoveStates { get; private set; }
 
+        private float _Scale = 1.0f;
+
+        public float Scale 
+        {
+            get
+            {
+                return this.Scale;
+            }
+            set
+            {
+                _Scale = value;
+                //if own texture has already been assigned, then scale it.
+                if(this.Texture != null)
+                {
+
+                }
+            }
+        }
+
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
         }
@@ -22,6 +41,7 @@ namespace PartyBall.Scripts.Entities
         {
             this.Speed = 10.0f;
             this.InitMoveStates();
+            this.Scale = 1.0f;
         }
 
         //update the player's logic
@@ -73,7 +93,7 @@ namespace PartyBall.Scripts.Entities
         private void InitMoveStates()
         {
             //set up move states
-            if(this.MoveStates == null)
+            if (this.MoveStates == null)
             {
                 this.MoveStates = new CharacterMoveState[Enum.GetNames(typeof(MoveType)).Length];
             }
@@ -85,5 +105,6 @@ namespace PartyBall.Scripts.Entities
 
             this.TranslateMoveState(MoveType.Roll);
         }
+
     }
 }

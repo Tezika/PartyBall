@@ -55,6 +55,7 @@
     <Compile Include="Scripts\CharacterMovement\CharacterRollState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterFallState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterStickState.cs" />
+    <Compile Include="Scripts\Singleton\RenderManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -119,6 +120,7 @@
   <ItemGroup>
     <Folder Include="Scripts\CharacterMovement\" />
     <Folder Include="Scripts\Level\" />
+    <Folder Include="Scripts\Singleton\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
