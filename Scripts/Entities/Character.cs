@@ -14,24 +14,7 @@ namespace PartyBall.Scripts.Entities
 
         public CharacterMoveState[] MoveStates { get; private set; }
 
-        private float _Scale = 1.0f;
-
-        public float Scale
-        {
-            get
-            {
-                return this.Scale;
-            }
-            set
-            {
-                _Scale = value;
-                //if own texture has already been assigned, then scale it.
-                if (this.Texture != null)
-                {
-
-                }
-            }
-        }
+     
 
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
@@ -88,6 +71,17 @@ namespace PartyBall.Scripts.Entities
             {
                 this.Position = new Vector2(this.Position.X + this.Speed, this.Position.Y);
             }
+
+            //Test the scale change.
+            if(state.IsKeyDown(Keys.W))
+            {
+                this.Scale += 0.1f;
+            }
+            else if(state.IsKeyDown(Keys.S))
+            {
+                this.Scale -= 0.1f;
+            }
+
         }
 
         private void InitMoveStates()

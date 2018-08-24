@@ -20,6 +20,8 @@ namespace PartyBall.Scripts.Entities
 
         public bool Visible { get; protected set; }
 
+        public float Scale { get; set; }
+
         public event EventHandler<EventArgs> EnabledChanged;
 
         public event EventHandler<EventArgs> UpdateOrderChanged;
@@ -44,12 +46,21 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
+        public Vector2 Origin
+        {
+            get
+            {
+                return new Vector2(this.Position.X + this.Width / 2, this.Position.Y + this.Height / 2);
+            }
+        }
+
         public GameObject(Texture2D texture, Vector2 position)
         {
             this.Texture = texture;
             this.Position = position;
             this.Visible = true;
             this.Enabled = true;
+            this.Scale = 1.0f;
         }
 
         public virtual void Initialize()
