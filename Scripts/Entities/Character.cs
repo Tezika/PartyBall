@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using PartyBall.Scripts.CharacterMovement;
 using System;
 
 namespace PartyBall.Scripts.Entities
@@ -9,6 +10,10 @@ namespace PartyBall.Scripts.Entities
     {
         public float Speed { get; internal set; }
 
+        public CharacterMoveState CurrentMoveState { get; private set; }
+
+        public CharacterMoveState[] MoveStates { get; private set; }
+
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
         }
@@ -16,23 +21,37 @@ namespace PartyBall.Scripts.Entities
         public override void Initialize()
         {
             this.Speed = 10.0f;
+            this.InitMoveStates();
         }
 
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
             this.UpdatePosition(Keyboard.GetState());
+            if(this.CurrentMoveState != null)
+            {
+                this.CurrentMoveState.Update(gameTime);
+            }
             base.Update(gameTime);
         }
-
+        
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
         }
 
+        public void TranslateMoveState(MoveType type)
+        {
+            if(this.CurrentMoveState != null)
+            {
+                this.CurrentMoveState.OnExit();
+            }
+            this.CurrentMoveState = this.MoveStates[(int)type];
+            this.CurrentMoveState.OnEnter();
+        }
+
         private void UpdatePosition(KeyboardState state)
         {
-            Console.WriteLine("Update the character's position.");
             if (state.IsKeyDown(Keys.Up))
             {
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.Speed);
@@ -49,6 +68,22 @@ namespace PartyBall.Scripts.Entities
             {
                 this.Position = new Vector2(this.Position.X + this.Speed, this.Position.Y);
             }
+        }
+
+        private void InitMoveStates()
+        {
+            //set up move states
+            if(this.MoveStates == null)
+            {
+                this.MoveStates = new CharacterMoveState[Enum.GetNames(typeof(MoveType)).Length];
+            }
+
+            this.MoveStates[(int)MoveType.Fall] = new CharacterFallState(this);
+            this.MoveStates[(int)MoveType.Jump] = new CharacterJumpState(this);
+            this.MoveStates[(int)MoveType.Roll] = new CharacterRollState(this);
+            this.MoveStates[(int)MoveType.Stick] = new CharacterStickState(this);
+
+            this.TranslateMoveState(MoveType.Roll);
         }
     }
 }

@@ -6,6 +6,8 @@ namespace PartyBall.Scripts.Entities
 {
     public class GameObject: IUpdateable, IDrawable
     {
+        public string Tag { get; private set; }
+
         public Texture2D Texture { get; private set; }
 
         public Vector2 Position { get; internal set; }

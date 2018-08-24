@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
 
 namespace PartyBall.Scripts.CharacterMovement
@@ -29,7 +29,7 @@ namespace PartyBall.Scripts.CharacterMovement
            
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
      
         }

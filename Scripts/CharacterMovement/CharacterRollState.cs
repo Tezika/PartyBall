@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
 
 namespace PartyBall.Scripts.CharacterMovement
@@ -20,13 +21,15 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public override void OnEnter()
         {
+            Console.WriteLine("PB: The character enter the roll state.");
         }
 
         public override void OnExit()
         {
+            Console.WriteLine("PB: The character exit the roll state.");
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
         }
     }

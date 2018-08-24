@@ -1,4 +1,5 @@
-﻿using PartyBall.Scripts.Entities;
+﻿using Microsoft.Xna.Framework;
+using PartyBall.Scripts.Entities;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
@@ -21,15 +22,10 @@ namespace PartyBall.Scripts.CharacterMovement
             this.Character = character;
         }
 
-        public void TranslateState(CharacterMoveState state)
-        {
-
-        }
-
         public abstract void OnEnter();
 
         public abstract void OnExit();
 
-        public abstract void Update();
+        public abstract void Update(GameTime gameTime);
     }
 }
