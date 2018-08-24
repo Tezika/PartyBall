@@ -1,7 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using PartyBall.Scripts;
 using PartyBall.Scripts.Entities;
 
 namespace PartyBall
@@ -11,15 +11,15 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
-        public GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager Graphics;
 
-        public SpriteBatch spriteBatch;
+        public SpriteBatch SpriteBatch;
 
-        public Player player;
+        public Character Character;
 
         public Game1()
         {
-            this.graphics = new GraphicsDeviceManager(this);
+            this.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
         }
 
@@ -34,12 +34,8 @@ namespace PartyBall
             // TODO: Add your initialization logic here
 
             base.Initialize();
-            this.player = new Player();
+            this.Character.Initialize();
 
-            // Load the player resources
-
-            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
-            this.player.Initialize(Content.Load<Texture2D>("ball"), playerPosition);
         }
 
         /// <summary>
@@ -49,9 +45,14 @@ namespace PartyBall
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            this.spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.SpriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            // Load the player resources
+            this.Character = new Character(Content.Load<Texture2D>("ball"), new Vector2(
+               GraphicsDevice.Viewport.TitleSafeArea.X,
+               GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2
+           ));
         }
 
         /// <summary>
@@ -74,8 +75,7 @@ namespace PartyBall
                 Exit();
 
             // TODO: Add your update logic here
-            this.player.Update();
-
+            this.Character.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -88,10 +88,20 @@ namespace PartyBall
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            this.spriteBatch.Begin();
-            this.player.Draw(this.spriteBatch);
-            this.spriteBatch.End();
+            this.SpriteBatch.Begin();
+            this.DrawGameobject(this.Character);
+            this.SpriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        private void DrawGameobject(GameObject go)
+        {
+            if (!go.Visible)
+            {
+                return;
+            }
+            Console.WriteLine("Draw the go, the position of go is " + go.Position.X + " " + go.Position.Y);
+            this.SpriteBatch.Draw(go.Texture, go.Position, Color.White);
         }
     }
 }
