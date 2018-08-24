@@ -100,7 +100,6 @@ namespace PartyBall
             {
                 return;
             }
-            Console.WriteLine("Draw the go, the position of go is " + go.Position.X + " " + go.Position.Y);
             this.SpriteBatch.Draw(go.Texture, go.Position, Color.White);
         }
     }
