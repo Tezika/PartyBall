@@ -28,7 +28,6 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public override void OnExit()
         {
-            Console.WriteLine("PB: The character exit the roll state.");
         }
 
         public override void Update(GameTime gameTime)

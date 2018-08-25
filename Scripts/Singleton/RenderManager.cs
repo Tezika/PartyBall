@@ -38,7 +38,7 @@ namespace PartyBall.Scripts.Singleton
             this.SpriteBatch = new SpriteBatch(gameInstance.GraphicsDevice);
         }
 
-        public void DrawGameObject(GameObject gameObject)
+        public void DrawGameObject(GameObject gameObject, float layerDepth = 1.0f)
         {
             if (!gameObject.Visible)
             {
@@ -53,8 +53,15 @@ namespace PartyBall.Scripts.Singleton
                                   scale: gameObject.Scale,
                                   origin: gameObject.Origin,
                                   effects: SpriteEffects.None,
-                                  layerDepth: 1.0f
+                                  layerDepth: layerDepth
                                   );
+            this.SpriteBatch.End();
+        }
+
+        public void DrawString(String str, SpriteFont font, Vector2 position)
+        {
+            this.SpriteBatch.Begin();
+            this.SpriteBatch.DrawString(font, str, position, Color.Black);
             this.SpriteBatch.End();
         }
     }

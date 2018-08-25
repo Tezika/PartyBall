@@ -13,6 +13,8 @@ namespace PartyBall
     {
         public Character Character;
 
+        public RegularPlatform RegPlatform;
+
         public Game1()
         {
             RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
@@ -41,6 +43,7 @@ namespace PartyBall
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             RenderManager.Instance.Setup(this);
+            Debugger.Instance.Setup(this);
 
             // TODO: use this.Content to load your game content here
             // Load the player resources
@@ -48,6 +51,11 @@ namespace PartyBall
                GraphicsDevice.Viewport.TitleSafeArea.X,
                GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2
            ));
+
+            this.RegPlatform = new RegularPlatform(Content.Load<Texture2D>("platform"), new Vector2(
+                GraphicsDevice.Viewport.TitleSafeArea.X,
+                GraphicsDevice.Viewport.TitleSafeArea.Y
+            ));
         }
 
         /// <summary>
@@ -71,6 +79,7 @@ namespace PartyBall
 
             // TODO: Add your update logic here
             this.Character.Update(gameTime);
+            this.RegPlatform.CheckCharacterCollision(this.Character.BoundingBox);
             base.Update(gameTime);
         }
 
@@ -82,7 +91,9 @@ namespace PartyBall
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // TODO: Add your drawing code here
+            RenderManager.Instance.DrawGameObject(this.RegPlatform);
             RenderManager.Instance.DrawGameObject(this.Character);
+            Debugger.Instance.DrawDebugInfo();
             base.Draw(gameTime);
         }
     }

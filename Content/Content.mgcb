@@ -37,3 +37,17 @@
 /processorParam:TextureFormat=Color
 /build:platform.png
 
+#begin SpriteFont/basicSpriteFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:SpriteFont/basicSpriteFont.spritefont;SpriteFont/debug.spritefont
+
+#begin spritefont/debug.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:spritefont/debug.spritefont
+

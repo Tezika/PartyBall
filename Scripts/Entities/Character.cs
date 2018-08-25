@@ -96,6 +96,5 @@ namespace PartyBall.Scripts.Entities
 
             this.TranslateMoveState(MoveType.Roll);
         }
-
     }
 }
