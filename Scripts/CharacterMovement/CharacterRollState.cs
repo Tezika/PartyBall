@@ -6,11 +6,11 @@ namespace PartyBall.Scripts.CharacterMovement
 {
     public class CharacterRollState : CharacterMoveState
     {
-        private float _timer;
+        private float _rollSpeed;
 
         public CharacterRollState(Character character): base(character)
         {
-            _timer = 0.0f;
+            _rollSpeed = 5.0f;
         }
 
         public override MoveType Type
@@ -23,7 +23,7 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public override void OnEnter()
         {
-            Console.WriteLine("PB: The character enter the roll state.");
+            this.Character.CurrentSpeed = _rollSpeed;
         }
 
         public override void OnExit()

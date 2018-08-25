@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
-using System;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
@@ -8,13 +7,11 @@ namespace PartyBall.Scripts.CharacterMovement
     {
         public float ScaleLimit { get; private set; }
 
-        public float JumpSpeed { get; private set; }
-
         public float HoverTime { get; private set; }
 
         private float _Timer;
 
-        private float _ScaleAcceleration;
+        private float _initScale;
 
         public override MoveType Type
         {
@@ -25,33 +22,33 @@ namespace PartyBall.Scripts.CharacterMovement
         }
 
         public CharacterJumpState(Character character) : base(character)
-        { 
+        {
             this.ScaleLimit = 2.0f;
-            this.JumpSpeed = 5.0f;
-            this.HoverTime = 5.0f;
+            this.HoverTime = 3.0f;
         }
 
         public override void OnEnter()
         {
-            Console.WriteLine("The character enters the Jump state");
             _Timer = 0.0f;
-            _ScaleAcceleration = (this.ScaleLimit - this.Character.Scale) / this.HoverTime;
+            _initScale = this.Character.Scale;
+            this.Character.CurrentSpeed = 2.0f;
         }
 
         public override void OnExit()
         {
-            Console.WriteLine("The character exits the Jump state");
         }
 
         public override void Update(GameTime gameTime)
         {
             _Timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (_Timer <= this.HoverTime)
+            if (_Timer < this.HoverTime)
             {
-                this.Character.Scale += _ScaleAcceleration;
+                var amount = _Timer / this.HoverTime;
+                this.Character.Scale = MathHelper.Lerp(_initScale, this.ScaleLimit, amount);
             }
             else
             {
+
                 _Timer = 0.0f;
                 this.Character.TranslateMoveState(MoveType.Fall);
             }

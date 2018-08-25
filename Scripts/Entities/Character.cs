@@ -8,7 +8,7 @@ namespace PartyBall.Scripts.Entities
 {
     public class Character : GameObject
     {
-        public float Speed { get; internal set; }
+        public float CurrentSpeed { get; internal set; }
 
         public CharacterMoveState CurrentMoveState { get; private set; }
 
@@ -20,7 +20,7 @@ namespace PartyBall.Scripts.Entities
 
         public override void Initialize()
         {
-            this.Speed = 10.0f;
+            this.CurrentSpeed = 5.0f;
             this.InitMoveStates();
             this.Scale = 1.0f;
         }
@@ -60,19 +60,19 @@ namespace PartyBall.Scripts.Entities
         {
             if (state.IsKeyDown(Keys.Up))
             {
-                this.Position = new Vector2(this.Position.X, this.Position.Y - this.Speed);
+                this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
             }
             else if (state.IsKeyDown(Keys.Down))
             {
-                this.Position = new Vector2(this.Position.X, this.Position.Y + this.Speed);
+                this.Position = new Vector2(this.Position.X, this.Position.Y + this.CurrentSpeed);
             }
             else if (state.IsKeyDown(Keys.Left))
             {
-                this.Position = new Vector2(this.Position.X - this.Speed, this.Position.Y);
+                this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
             }
             else if (state.IsKeyDown(Keys.Right))
             {
-                this.Position = new Vector2(this.Position.X + this.Speed, this.Position.Y);
+                this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
 
             if (state.IsKeyDown(Keys.Space))
