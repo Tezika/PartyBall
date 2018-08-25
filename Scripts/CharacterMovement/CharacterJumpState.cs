@@ -5,13 +5,9 @@ namespace PartyBall.Scripts.CharacterMovement
 {
     public class CharacterJumpState : CharacterMoveState
     {
-        public float ScaleLimit { get; private set; }
-
-        public float HoverTime { get; private set; }
-
         private float _Timer;
 
-        private float _initScale;
+        private float _InitScale;
 
         public override MoveType Type
         {
@@ -23,15 +19,13 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public CharacterJumpState(Character character) : base(character)
         {
-            this.ScaleLimit = 2.0f;
-            this.HoverTime = 3.0f;
         }
 
         public override void OnEnter()
         {
             _Timer = 0.0f;
-            _initScale = this.Character.Scale;
-            this.Character.CurrentSpeed = 2.0f;
+            _InitScale = this.Character.Scale;
+            this.Character.CurrentSpeed = CharacterMoveAbilities.HoverSpeed;
         }
 
         public override void OnExit()
@@ -41,10 +35,10 @@ namespace PartyBall.Scripts.CharacterMovement
         public override void Update(GameTime gameTime)
         {
             _Timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (_Timer < this.HoverTime)
+            if (_Timer < CharacterMoveAbilities.HoverTime)
             {
-                var amount = _Timer / this.HoverTime;
-                this.Character.Scale = MathHelper.Lerp(_initScale, this.ScaleLimit, amount);
+                var amount = _Timer / CharacterMoveAbilities.HoverTime;
+                this.Character.Scale = MathHelper.Lerp(_InitScale, CharacterMoveAbilities.HoverScale, amount);
             }
             else
             {

@@ -52,7 +52,7 @@ namespace PartyBall
                GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2
            ));
 
-            this.RegPlatform = new RegularPlatform(Content.Load<Texture2D>("platform"), new Vector2(
+            this.RegPlatform = new RegularPlatform(Content.Load<Texture2D>("ball"), new Vector2(
                 GraphicsDevice.Viewport.TitleSafeArea.X,
                 GraphicsDevice.Viewport.TitleSafeArea.Y
             ));

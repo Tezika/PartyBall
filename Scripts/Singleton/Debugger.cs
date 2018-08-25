@@ -36,12 +36,12 @@ namespace PartyBall.Scripts.Singleton
 
         public void DrawDebugInfo()
         {
-            RenderManager.Instance.DrawString(this.DebugInfo, this.Font, new Vector2(500,10));
+            RenderManager.Instance.DrawString(this.DebugInfo, this.Font, new Vector2(460, 10));
         }
 
         public void Log(string str)
         {
             this.DebugInfo = "PR: " + str;
         }
-      }
+    }
 }

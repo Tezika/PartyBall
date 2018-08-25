@@ -15,6 +15,8 @@ namespace PartyBall.Scripts.Singleton
 
         public SpriteBatch SpriteBatch;
 
+        private Texture2D _Pixel;
+
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
         static RenderManager()
@@ -36,6 +38,9 @@ namespace PartyBall.Scripts.Singleton
         public void Setup(Game gameInstance)
         {
             this.SpriteBatch = new SpriteBatch(gameInstance.GraphicsDevice);
+            // Somewhere in your LoadContent() method:
+            _Pixel = new Texture2D(gameInstance.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
+            _Pixel.SetData(new[] { Color.White }); // so that we can draw whatever color we want on top of it
         }
 
         public void DrawGameObject(GameObject gameObject, float layerDepth = 1.0f)
@@ -55,6 +60,9 @@ namespace PartyBall.Scripts.Singleton
                                   effects: SpriteEffects.None,
                                   layerDepth: layerDepth
                                   );
+
+            //Draw the boundingbox outline
+            this.DrawBorder(gameObject.BoundingBox, 1, Color.Purple);
             this.SpriteBatch.End();
         }
 
@@ -63,6 +71,26 @@ namespace PartyBall.Scripts.Singleton
             this.SpriteBatch.Begin();
             this.SpriteBatch.DrawString(font, str, position, Color.Black);
             this.SpriteBatch.End();
+        }
+
+        private void DrawBorder(Rectangle rectangleToDraw, int thicknessOfBorder, Color borderColor)
+        {
+            // Draw top line
+            this.SpriteBatch.Draw(_Pixel, new Rectangle(rectangleToDraw.X, rectangleToDraw.Y, rectangleToDraw.Width, thicknessOfBorder), borderColor);
+
+            // Draw left line
+            this.SpriteBatch.Draw(_Pixel, new Rectangle(rectangleToDraw.X, rectangleToDraw.Y, thicknessOfBorder, rectangleToDraw.Height), borderColor);
+
+            // Draw right line
+            this.SpriteBatch.Draw(_Pixel, new Rectangle((rectangleToDraw.X + rectangleToDraw.Width - thicknessOfBorder),
+                                            rectangleToDraw.Y,
+                                            thicknessOfBorder,
+                                            rectangleToDraw.Height), borderColor);
+            // Draw bottom line
+            this.SpriteBatch.Draw(_Pixel, new Rectangle(rectangleToDraw.X,
+                                            rectangleToDraw.Y + rectangleToDraw.Height - thicknessOfBorder,
+                                            rectangleToDraw.Width,
+                                            thicknessOfBorder), borderColor);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace PartyBall.Scripts.Entities
         {
             get
             {
-                return new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Width, this.Height);
+                return new Rectangle((int)this.Position.X - this.Width/2, (int)this.Position.Y - this.Height/2, this.Width, this.Height);
             }
         }
 

@@ -20,7 +20,7 @@ namespace PartyBall.Scripts.Entities
 
         public override void Initialize()
         {
-            this.CurrentSpeed = 5.0f;
+            this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
             this.InitMoveStates();
             this.Scale = 1.0f;
         }
