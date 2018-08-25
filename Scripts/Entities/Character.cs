@@ -14,8 +14,6 @@ namespace PartyBall.Scripts.Entities
 
         public CharacterMoveState[] MoveStates { get; private set; }
 
-     
-
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
         }
