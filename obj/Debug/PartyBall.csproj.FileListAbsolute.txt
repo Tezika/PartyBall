@@ -62,3 +62,5 @@ C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csprojAssemblyRefer
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/character.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb

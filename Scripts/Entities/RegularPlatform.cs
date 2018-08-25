@@ -29,7 +29,7 @@ namespace PartyBall.Scripts.Entities
             base.CheckCharacterCollision(characterBB);
             if (this.BoundingBox.Intersects(characterBB))
             {
-                Debugger.Instance.Log("The character enter the bounding box");
+                Debugger.Instance.Log("The character enters the bounding box");
             }
             else
             {

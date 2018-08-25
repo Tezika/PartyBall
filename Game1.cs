@@ -13,7 +13,9 @@ namespace PartyBall
     {
         public Character Character;
 
-        public RegularPlatform RegPlatform;
+        public RegularPlatform RegPlatform_1;
+
+        public RegularPlatform RegPlatform_2;
 
         public Game1()
         {
@@ -47,15 +49,26 @@ namespace PartyBall
 
             // TODO: use this.Content to load your game content here
             // Load the player resources
-            this.Character = new Character(Content.Load<Texture2D>("ball"), new Vector2(
+            this.Character = new Character(Content.Load<Texture2D>("texture//character"), new Vector2(
                GraphicsDevice.Viewport.TitleSafeArea.X,
                GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2
-           ));
-
-            this.RegPlatform = new RegularPlatform(Content.Load<Texture2D>("ball"), new Vector2(
-                GraphicsDevice.Viewport.TitleSafeArea.X,
-                GraphicsDevice.Viewport.TitleSafeArea.Y
             ));
+            this.Character.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
+                                   (float)(GraphicsDevice.Viewport.Height - this.Character.Height / 2));
+
+            this.RegPlatform_1 = new RegularPlatform(Content.Load<Texture2D>("texture//platform_reg"), new Vector2(
+                (float)(GraphicsDevice.Viewport.Width * 0.5),
+                (float)(GraphicsDevice.Viewport.Height)
+            ));
+
+
+            this.RegPlatform_2 = new RegularPlatform(Content.Load<Texture2D>("texture//platform_reg"), new Vector2(0, 0));
+
+            this.RegPlatform_1.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
+                                               (float)(GraphicsDevice.Viewport.Height - this.RegPlatform_1.Height / 2));
+
+            this.RegPlatform_2.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
+                                                       (float)(GraphicsDevice.Viewport.Height - 2 * this.RegPlatform_1.Height));
         }
 
         /// <summary>
@@ -79,7 +92,7 @@ namespace PartyBall
 
             // TODO: Add your update logic here
             this.Character.Update(gameTime);
-            this.RegPlatform.CheckCharacterCollision(this.Character.BoundingBox);
+            this.RegPlatform_1.CheckCharacterCollision(this.Character.BoundingBox);
             base.Update(gameTime);
         }
 
@@ -91,7 +104,11 @@ namespace PartyBall
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // TODO: Add your drawing code here
-            RenderManager.Instance.DrawGameObject(this.RegPlatform);
+            //Draw title!!!
+            RenderManager.Instance.DrawString("PartyBaller", Debugger.Instance.Font, new Vector2((float)0.4 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width,
+                                                                                                 (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
+            RenderManager.Instance.DrawGameObject(this.RegPlatform_2);
+            RenderManager.Instance.DrawGameObject(this.RegPlatform_1);
             RenderManager.Instance.DrawGameObject(this.Character);
             Debugger.Instance.DrawDebugInfo();
             base.Draw(gameTime);

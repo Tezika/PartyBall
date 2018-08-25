@@ -34,7 +34,7 @@ namespace PartyBall.Scripts.Entities
         {
             get
             {
-                return (this.Texture == null ? 0 : (this.Texture.Width * (int)this.Scale));
+                return (this.Texture == null ? 0 : this.Texture.Width);
             }
         }
 
@@ -42,7 +42,7 @@ namespace PartyBall.Scripts.Entities
         {
             get
             {
-                return (this.Texture == null ? 0 : this.Texture.Height * (int)this.Scale);
+                return (this.Texture == null ? 0 : this.Texture.Height);
             }
         }
 
@@ -58,7 +58,10 @@ namespace PartyBall.Scripts.Entities
         {
             get
             {
-                return new Rectangle((int)this.Position.X - this.Width/2, (int)this.Position.Y - this.Height/2, this.Width, this.Height);
+                return new Rectangle((int)(this.Position.X - this.Origin.X * this.Scale),
+                                     (int)(this.Position.Y - this.Origin.Y * this.Scale),
+                                     (int)(this.Width * this.Scale),
+                                     (int)(this.Height * this.Scale));
             }
         }
 

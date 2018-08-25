@@ -36,12 +36,17 @@ namespace PartyBall.Scripts.Singleton
 
         public void DrawDebugInfo()
         {
-            RenderManager.Instance.DrawString(this.DebugInfo, this.Font, new Vector2(460, 10));
+            RenderManager.Instance.DrawString(this.DebugInfo,
+                                              this.Font,
+                                              new Vector2(0, (float)RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - 20.0f));
         }
 
         public void Log(string str)
         {
-            this.DebugInfo = "PR: " + str;
+            this.DebugInfo = "Debug:" + str;
+            RenderManager.Instance.DrawString(this.DebugInfo,
+                                              this.Font,
+                                              new Vector2(0, (float)RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - 20.0f));
         }
     }
 }

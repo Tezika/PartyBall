@@ -37,7 +37,13 @@ namespace PartyBall.Scripts.Singleton
 
         public void Setup(Game gameInstance)
         {
+            //Setup window size
+            this.Graphics.PreferredBackBufferWidth = 320;
+            this.Graphics.PreferredBackBufferHeight = 640;
+            this.Graphics.ApplyChanges();
+
             this.SpriteBatch = new SpriteBatch(gameInstance.GraphicsDevice);
+
             // Somewhere in your LoadContent() method:
             _Pixel = new Texture2D(gameInstance.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
             _Pixel.SetData(new[] { Color.White }); // so that we can draw whatever color we want on top of it
@@ -61,7 +67,7 @@ namespace PartyBall.Scripts.Singleton
                                   layerDepth: layerDepth
                                   );
 
-            //Draw the boundingbox outline
+            //Draw the boundingbox outline - debug function
             this.DrawBorder(gameObject.BoundingBox, 1, Color.Purple);
             this.SpriteBatch.End();
         }
