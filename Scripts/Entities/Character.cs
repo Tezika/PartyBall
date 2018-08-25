@@ -45,6 +45,11 @@ namespace PartyBall.Scripts.Entities
         {
             if (this.CurrentMoveState != null)
             {
+                //if the player has already on that state.
+                if (this.CurrentMoveState.Type == type)
+                {
+                    return;
+                }
                 this.CurrentMoveState.OnExit();
             }
             this.CurrentMoveState = this.MoveStates[(int)type];
@@ -70,14 +75,9 @@ namespace PartyBall.Scripts.Entities
                 this.Position = new Vector2(this.Position.X + this.Speed, this.Position.Y);
             }
 
-            //Test the scale change.
-            if(state.IsKeyDown(Keys.W))
+            if (state.IsKeyDown(Keys.Space))
             {
-                this.Scale += 0.1f;
-            }
-            else if(state.IsKeyDown(Keys.S))
-            {
-                this.Scale -= 0.1f;
+                this.TranslateMoveState(MoveType.Jump);
             }
         }
 

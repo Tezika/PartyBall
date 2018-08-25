@@ -6,9 +6,11 @@ namespace PartyBall.Scripts.CharacterMovement
 {
     public class CharacterRollState : CharacterMoveState
     {
+        private float _timer;
+
         public CharacterRollState(Character character): base(character)
         {
-
+            _timer = 0.0f;
         }
 
         public override MoveType Type

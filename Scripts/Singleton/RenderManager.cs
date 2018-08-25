@@ -44,7 +44,6 @@ namespace PartyBall.Scripts.Singleton
             {
                 return;
             }
-            Console.WriteLine("PR : the origin is: " + gameObject.Origin.X + " " + gameObject.Origin.Y);
             this.SpriteBatch.Begin();
             this.SpriteBatch.Draw(texture: gameObject.Texture,
                                   position: gameObject.Position,
@@ -52,14 +51,11 @@ namespace PartyBall.Scripts.Singleton
                                   color: Color.White,
                                   rotation: 0.0f,
                                   scale: gameObject.Scale,
-                                  origin: Vector2.Zero,
-                                  effects:SpriteEffects.None,
+                                  origin: gameObject.Origin,
+                                  effects: SpriteEffects.None,
                                   layerDepth: 1.0f
                                   );
             this.SpriteBatch.End();
-
-
-             
         }
     }
 }
