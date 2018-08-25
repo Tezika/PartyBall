@@ -81,7 +81,6 @@ namespace PartyBall.Scripts.Entities
             {
                 this.Scale -= 0.1f;
             }
-
         }
 
         private void InitMoveStates()
