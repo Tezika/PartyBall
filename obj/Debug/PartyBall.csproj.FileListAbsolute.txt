@@ -42,8 +42,6 @@ C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.pdb
 C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/SpriteFont/debug.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/ball.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/platform.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
@@ -63,4 +61,5 @@ C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csprojAssemblyRefer
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/character.xnb
+/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
