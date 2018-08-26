@@ -6,12 +6,12 @@ namespace PartyBall.Scripts.Entities
     public enum PlatformType
     {
         Regular,
-        Sticky
+        Wall
     }
 
     public class Platform : GameObject
     {
-        public virtual PlatformType type { get; }
+        public virtual PlatformType Type { get; }
 
         public Platform(Texture2D texture, Vector2 position) : base(texture, position)
         {

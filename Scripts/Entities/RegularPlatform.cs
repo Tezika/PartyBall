@@ -5,7 +5,7 @@ namespace PartyBall.Scripts.Entities
 {
     public class RegularPlatform: Platform
     {
-        public override PlatformType type
+        public override PlatformType Type
         {
             get
             {

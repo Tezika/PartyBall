@@ -36,7 +36,7 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public override void OnEnter()
         {
-            Debugger.Instance.Log("The player is sticking now");
+            Debugger.Instance.Log("The player is sliding now");
         }
 
         public override void OnExit()

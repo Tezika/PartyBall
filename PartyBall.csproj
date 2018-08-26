@@ -49,7 +49,7 @@
     <Compile Include="Scripts\Entities\Platform.cs" />
     <Compile Include="Scripts\Entities\Character.cs" />
     <Compile Include="Scripts\Entities\RegularPlatform.cs" />
-    <Compile Include="Scripts\Entities\StickyPlatform.cs" />
+    <Compile Include="Scripts\Entities\Wall.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterMoveState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterJumpState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterRollState.cs" />
