@@ -56,22 +56,24 @@ namespace PartyBall.Scripts.CharacterMovement
             Debugger.Instance.Log("The player is sliding now");
             this.CanMoveLeft = false;
             this.CanMoveRight = false;
+            //Scale Stuff
+            _InitScale = this.Character.Scale;
+
             this.Character.CurrentSpeed = CharacterMoveAbilities.WallMoveSpeed;
             _CurWall = this.Character.CurPlatform as Wall;
             if (_CurWall.Side == WallSide.Left)
             {
+                var distance = Math.Abs(_CurWall.BoundingBox.Right + this.Character.Width / 2 - this.Character.Position.X);
                 _SlideDirection = SlideDirection.Right;
-                _SlideTime = Math.Abs(_CurWall.BoundingBox.Right + this.Character.Width / 2 - this.Character.Position.X) / CharacterMoveAbilities.SlideSpeed;
+                _SlideTime = distance / CharacterMoveAbilities.SlideSpeed;
             }
             else
             {
+                var distance = Math.Abs(this.Character.Position.X + this.Character.Width / 2 - _CurWall.BoundingBox.Left);
                 _SlideDirection = SlideDirection.Left;
-                _SlideTime = Math.Abs(this.Character.Position.X + this.Character.Width / 2 - _CurWall.BoundingBox.Left) / CharacterMoveAbilities.SlideSpeed;
+                _SlideTime = distance / CharacterMoveAbilities.SlideSpeed;
             }
-
-            //Scale Stuff
-            _InitScale = this.Character.Scale;
-
+                    
             _Timer = 0.0f;
         }
 
@@ -90,8 +92,8 @@ namespace PartyBall.Scripts.CharacterMovement
             {
                 var positionX = 0.0f;
                 var amount = _Timer / _SlideTime;
-                //Why doesn't it work?
-                //this.Character.Scale = MathHelper.Lerp(_InitScale, 0, amount);
+                //Why doesn't it work? The factor is mysterious???
+                this.Character.Scale = MathHelper.Lerp(_InitScale, CharacterMoveAbilities.SlideEdgeScale, amount * 5);
                 if (_SlideDirection == SlideDirection.Left)
                 {
                     positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Left - this.Character.Width/2 - 2.0f, amount);
