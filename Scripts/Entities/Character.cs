@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.CharacterMovement;
+using PartyBall.Scripts.Singleton;
 using System;
 
 namespace PartyBall.Scripts.Entities
@@ -20,9 +21,7 @@ namespace PartyBall.Scripts.Entities
 
         public override void Initialize()
         {
-            this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
             this.InitMoveStates();
-            this.Scale = 1.0f;
         }
 
         //update the player's logic
@@ -56,8 +55,39 @@ namespace PartyBall.Scripts.Entities
             this.CurrentMoveState.OnEnter();
         }
 
+        public bool CheckLandOnPlatform()
+        {
+            for (int i = 0; i < Game1.Instance.Platforms.Count; i++)
+            {
+                var platform = Game1.Instance.Platforms[i];
+                if (platform.BoundingBox.Intersects(this.BoundingBox))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void Respawn()
+        {
+            Debugger.Instance.Log("The character has already respawned");
+            this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
+            this.Scale = 1;
+            //Reset the player's 
+            this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
+                         (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.Height / 2));
+
+            this.TranslateMoveState(MoveType.Roll);
+        }
+
+
         private void UpdatePosition(KeyboardState state)
         {
+            if (!this.CurrentMoveState.CanControl)
+            {
+                return;
+            }
+
             if (state.IsKeyDown(Keys.Up))
             {
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
@@ -75,9 +105,17 @@ namespace PartyBall.Scripts.Entities
                 this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
 
-            if (state.IsKeyDown(Keys.Space))
+            if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
             {
                 this.TranslateMoveState(MoveType.Jump);
+            }
+
+            if (this.CurrentMoveState.Type == MoveType.Roll || this.CurrentMoveState.Type == MoveType.Stick)
+            {
+                if(!this.CheckLandOnPlatform())
+                {
+                    this.TranslateMoveState(MoveType.Fall);
+                }
             }
         }
 
@@ -93,8 +131,7 @@ namespace PartyBall.Scripts.Entities
             this.MoveStates[(int)MoveType.Jump] = new CharacterJumpState(this);
             this.MoveStates[(int)MoveType.Roll] = new CharacterRollState(this);
             this.MoveStates[(int)MoveType.Stick] = new CharacterStickState(this);
-
-            this.TranslateMoveState(MoveType.Roll);
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.Entities;
@@ -11,16 +12,21 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
+        public static Game1 Instance = null;
+
         public Character Character;
 
         public RegularPlatform RegPlatform_1;
 
         public RegularPlatform RegPlatform_2;
 
+        public List<Platform> Platforms = new List<Platform>();
+
         public Game1()
         {
             RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
+            Game1.Instance = this;
         }
 
         /// <summary>
@@ -34,7 +40,7 @@ namespace PartyBall
             // TODO: Add your initialization logic here
             base.Initialize();
             this.Character.Initialize();
-
+            this.Character.Respawn();
         }
 
         /// <summary>
@@ -43,6 +49,8 @@ namespace PartyBall
         /// </summary>
         protected override void LoadContent()
         {
+            this.Platforms.Clear();
+
             // Create a new SpriteBatch, which can be used to draw textures.
             RenderManager.Instance.Setup(this);
             Debugger.Instance.Setup(this);
@@ -53,8 +61,6 @@ namespace PartyBall
                GraphicsDevice.Viewport.TitleSafeArea.X,
                GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2
             ));
-            this.Character.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
-                                   (float)(GraphicsDevice.Viewport.Height - this.Character.Height / 2));
 
             this.RegPlatform_1 = new RegularPlatform(Content.Load<Texture2D>("texture//platform_reg"), new Vector2(
                 (float)(GraphicsDevice.Viewport.Width * 0.5),
@@ -69,6 +75,9 @@ namespace PartyBall
 
             this.RegPlatform_2.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
                                                        (float)(GraphicsDevice.Viewport.Height - 2 * this.RegPlatform_1.Height));
+
+            this.Platforms.Add(this.RegPlatform_1);
+            this.Platforms.Add(this.RegPlatform_2);
         }
 
         /// <summary>
@@ -92,7 +101,6 @@ namespace PartyBall
 
             // TODO: Add your update logic here
             this.Character.Update(gameTime);
-            this.RegPlatform_1.CheckCharacterCollision(this.Character.BoundingBox);
             base.Update(gameTime);
         }
 

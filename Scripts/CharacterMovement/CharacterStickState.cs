@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Singleton;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
@@ -16,8 +17,26 @@ namespace PartyBall.Scripts.CharacterMovement
                 return MoveType.Stick;
             }
         }
+
+        public override bool CanControl
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public override bool CanJump
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         public override void OnEnter()
         {
+            Debugger.Instance.Log("The player is sticking now");
         }
 
         public override void OnExit()

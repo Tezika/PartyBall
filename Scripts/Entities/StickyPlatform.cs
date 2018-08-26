@@ -8,10 +8,5 @@ namespace PartyBall.Scripts.Entities
         public StickyPlatform(Texture2D texture, Vector2 position) : base(texture, position)
         {
         }
-
-        public override void CheckCharacterCollision(Rectangle characterBB)
-        {
-            base.CheckCharacterCollision(characterBB);
-        }
     }
 }

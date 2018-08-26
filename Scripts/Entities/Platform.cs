@@ -22,10 +22,5 @@ namespace PartyBall.Scripts.Entities
         {
             base.Draw(gameTime);
         }
-
-        public virtual void CheckCharacterCollision(Rectangle characterBB)
-        {
-
-        }
     }
 }

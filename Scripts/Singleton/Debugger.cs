@@ -18,7 +18,7 @@ namespace PartyBall.Scripts.Singleton
 
         private Debugger()
         {
-
+            this.DebugInfo = "";
         }
 
         public static Debugger Instance

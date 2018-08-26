@@ -1,12 +1,12 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Singleton;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
     public class CharacterRollState : CharacterMoveState
     {
-        public CharacterRollState(Character character): base(character)
+        public CharacterRollState(Character character) : base(character)
         {
         }
 
@@ -18,8 +18,25 @@ namespace PartyBall.Scripts.CharacterMovement
             }
         }
 
+        public override bool CanControl
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public override bool CanJump
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         public override void OnEnter()
         {
+            Debugger.Instance.Log("The player is rolling now");
             this.Character.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
         }
 

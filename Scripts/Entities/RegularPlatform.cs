@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PartyBall.Scripts.Singleton;
 
 namespace PartyBall.Scripts.Entities
 {
@@ -23,20 +22,5 @@ namespace PartyBall.Scripts.Entities
         {
             base.Draw(gameTime);
         }
-
-        public override void CheckCharacterCollision(Rectangle characterBB)
-        {
-            base.CheckCharacterCollision(characterBB);
-            if (this.BoundingBox.Intersects(characterBB))
-            {
-                Debugger.Instance.Log("The character enters the bounding box");
-            }
-            else
-            {
-                Debugger.Instance.Log("The character is not in the bounding box");
-            }
-           
-        }
-
     }
 }
