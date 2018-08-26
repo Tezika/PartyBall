@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Render;
 using PartyBall.Scripts.Singleton;
 
 namespace PartyBall
@@ -24,6 +25,8 @@ namespace PartyBall
 
         public Wall Wall_2;
 
+        public Camera Camera { get; private set; }
+
         public List<Platform> Platforms = new List<Platform>();
 
         public Game1()
@@ -31,6 +34,7 @@ namespace PartyBall
             RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
             Game1.Instance = this;
+            this.Camera = new Camera();
         }
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace PartyBall
 
             // TODO: Add your update logic here
             this.Character.Update(gameTime);
+            this.Camera.FollowCharacter(this.Character);
             base.Update(gameTime);
         }
 
@@ -120,15 +125,18 @@ namespace PartyBall
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // TODO: Add your drawing code here
-            //Draw title!!!
-            RenderManager.Instance.DrawString("PartyBaller", Debugger.Instance.Font, new Vector2((float)0.4 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width,
-                                                                                                 (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
+           
             RenderManager.Instance.DrawGameObject(this.RegPlatform_2);
             RenderManager.Instance.DrawGameObject(this.RegPlatform_1);
             RenderManager.Instance.DrawGameObject(this.Wall_1);
             RenderManager.Instance.DrawGameObject(this.Wall_2);
             RenderManager.Instance.DrawGameObject(this.Character);
+
             Debugger.Instance.DrawDebugInfo();
+
+            //Draw title!!!
+            RenderManager.Instance.DrawString("PartyBaller", Debugger.Instance.Font, new Vector2((float)0.4 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width,
+                                                                                                  (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
             base.Draw(gameTime);
         }
     }

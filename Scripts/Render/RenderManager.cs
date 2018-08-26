@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PartyBall.Scripts.Entities;
 
-namespace PartyBall.Scripts.Singleton
+namespace PartyBall.Scripts.Render
 {
     //Cite this from the http://csharpindepth.com/Articles/General/Singleton.aspx, perhaps need to review it one day.
     //This singlton serves for handling the rendering stuff.
@@ -11,9 +11,25 @@ namespace PartyBall.Scripts.Singleton
     {
         private static readonly RenderManager instance = new RenderManager();
 
-        public GraphicsDeviceManager Graphics;
+        public GraphicsDeviceManager Graphics { get; set; }
 
-        public SpriteBatch SpriteBatch;
+        public SpriteBatch SpriteBatch { get; set; }
+
+        public int ScreenHeight
+        {
+            get
+            {
+                return this.Graphics.PreferredBackBufferHeight;
+            }
+        }
+
+        public int ScreenWidth
+        {
+            get
+            {
+                return this.Graphics.PreferredBackBufferWidth;
+            }
+        }
 
         private Texture2D _Pixel;
 
@@ -55,7 +71,7 @@ namespace PartyBall.Scripts.Singleton
             {
                 return;
             }
-            this.SpriteBatch.Begin();
+            this.SpriteBatch.Begin(transformMatrix: Game1.Instance.Camera.Transform);
             this.SpriteBatch.Draw(texture: gameObject.Texture,
                                   position: gameObject.Position,
                                   sourceRectangle: null,

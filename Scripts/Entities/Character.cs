@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.CharacterMovement;
+using PartyBall.Scripts.Render;
 using PartyBall.Scripts.Singleton;
 using System;
 

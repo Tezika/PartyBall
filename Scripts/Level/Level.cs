@@ -5,7 +5,7 @@ namespace PartyBall.Scripts.Level
 {
     public class Level
     {
-        private List<Platform> _Platforms = new List<Platform>();
+        public List<GameObject> GameObjects { get; private set; }
 
         public Level()
         {
