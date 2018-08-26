@@ -15,6 +15,8 @@ namespace PartyBall.Scripts.Entities
 
         public CharacterMoveState[] MoveStates { get; private set; }
 
+        public Platform _CurPlatform { get; private set; }
+
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
         }
@@ -22,12 +24,14 @@ namespace PartyBall.Scripts.Entities
         public override void Initialize()
         {
             this.InitMoveStates();
+            _CurPlatform = null;
         }
 
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
             this.UpdatePosition(Keyboard.GetState());
+            this.UpdatePlatform();
             if (this.CurrentMoveState != null)
             {
                 this.CurrentMoveState.Update(gameTime);
@@ -76,8 +80,41 @@ namespace PartyBall.Scripts.Entities
             //Reset the player's 
             this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
                          (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.Height / 2));
-
             this.TranslateMoveState(MoveType.Roll);
+        }
+
+        private void UpdatePlatform()
+        {
+            //When player is jumping or  falling, we dont update the platform
+            if (this.CurrentMoveState.Type == MoveType.Jump || this.CurrentMoveState.Type == MoveType.Fall)
+            {
+                return;
+            }
+            _CurPlatform = null;
+            for (int i = 0; i < Game1.Instance.Platforms.Count; i++)
+            {
+                var platform = Game1.Instance.Platforms[i];
+                if (platform.BoundingBox.Intersects(this.BoundingBox))
+                {
+                    _CurPlatform = platform;
+                    break;
+                }
+            }
+
+            if (_CurPlatform == null)          
+            {
+                this.TranslateMoveState(MoveType.Fall);
+                return;
+            }
+
+            if (_CurPlatform.Type == PlatformType.Regular && this.CurrentMoveState.Type != MoveType.Roll)
+            {
+                this.TranslateMoveState(MoveType.Roll);
+            }
+            else if (_CurPlatform.Type == PlatformType.Wall && this.CurrentMoveState.Type != MoveType.Slide)
+            {
+                this.TranslateMoveState(MoveType.Slide);
+            }
         }
 
 
@@ -112,15 +149,7 @@ namespace PartyBall.Scripts.Entities
             if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
             {
                 this.TranslateMoveState(MoveType.Jump);
-            }
-
-            //Check whether the player is on a platform or not.
-            if (this.CurrentMoveState.Type == MoveType.Roll || this.CurrentMoveState.Type == MoveType.Slide)
-            {
-                if(!this.CheckLandOnPlatform())
-                {
-                    this.TranslateMoveState(MoveType.Fall);
-                }
+                _CurPlatform = null;
             }
         }
 

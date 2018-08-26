@@ -26,7 +26,5 @@ namespace PartyBall.Scripts.Entities
         {
             this.Side = WallSide.Left;
         }
-
-
     }
 }
