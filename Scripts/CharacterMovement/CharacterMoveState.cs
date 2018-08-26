@@ -13,7 +13,6 @@ namespace PartyBall.Scripts.CharacterMovement
 
     public abstract class CharacterMoveState
     {
-
         public Character Character;
 
         public abstract MoveType Type { get; }
@@ -32,6 +31,35 @@ namespace PartyBall.Scripts.CharacterMovement
         public abstract void OnExit();
 
         public abstract void Update(GameTime gameTime);
+
+        private bool _CanMoveLeft = true;
+
+        public bool CanMoveLeft
+        {
+            get
+            {
+                return _CanMoveLeft;
+            }
+
+            protected set
+            {
+                _CanMoveLeft = value;
+            }
+        }
+
+        private bool _CanMoveRight = true;
+
+        public bool CanMoveRight
+        {
+            get
+            {
+                return _CanMoveRight;
+            }
+            protected set
+            {
+                _CanMoveRight = value;
+            }
+        }
     }
 
     public static class CharacterMoveAbilities
@@ -53,9 +81,9 @@ namespace PartyBall.Scripts.CharacterMovement
         public const float FallTime = 1.0f;
 
         //Slide
-        public const float SlideSpeed = 0.5f;
+        public const float SlideSpeed = 6.0f;
 
-        public const float SlideTime = 1.0f;
+        public const float WallMoveSpeed = 1.0f;
 
         public const float SlideEdgeScale = 0.5f;
     }

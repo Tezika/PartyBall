@@ -15,7 +15,7 @@ namespace PartyBall.Scripts.Entities
 
         public CharacterMoveState[] MoveStates { get; private set; }
 
-        public Platform _CurPlatform { get; private set; }
+        public Platform CurPlatform { get; private set; }
 
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
@@ -24,7 +24,7 @@ namespace PartyBall.Scripts.Entities
         public override void Initialize()
         {
             this.InitMoveStates();
-            _CurPlatform = null;
+            this.CurPlatform = null;
         }
 
         //update the player's logic
@@ -59,19 +59,6 @@ namespace PartyBall.Scripts.Entities
             this.CurrentMoveState.OnEnter();
         }
 
-        public bool CheckLandOnPlatform()
-        {
-            for (int i = 0; i < Game1.Instance.Platforms.Count; i++)
-            {
-                var platform = Game1.Instance.Platforms[i];
-                if (platform.BoundingBox.Intersects(this.BoundingBox))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public void Respawn()
         {
             Debugger.Instance.Log("The character has already respawned");
@@ -90,28 +77,28 @@ namespace PartyBall.Scripts.Entities
             {
                 return;
             }
-            _CurPlatform = null;
+            this.CurPlatform = null;
             for (int i = 0; i < Game1.Instance.Platforms.Count; i++)
             {
                 var platform = Game1.Instance.Platforms[i];
                 if (platform.BoundingBox.Intersects(this.BoundingBox))
                 {
-                    _CurPlatform = platform;
+                    this.CurPlatform = platform;
                     break;
                 }
             }
 
-            if (_CurPlatform == null)          
+            if (this.CurPlatform == null)          
             {
                 this.TranslateMoveState(MoveType.Fall);
                 return;
             }
 
-            if (_CurPlatform.Type == PlatformType.Regular && this.CurrentMoveState.Type != MoveType.Roll)
+            if (this.CurPlatform.Type == PlatformType.Regular && this.CurrentMoveState.Type != MoveType.Roll)
             {
                 this.TranslateMoveState(MoveType.Roll);
             }
-            else if (_CurPlatform.Type == PlatformType.Wall && this.CurrentMoveState.Type != MoveType.Slide)
+            else if (this.CurPlatform.Type == PlatformType.Wall && this.CurrentMoveState.Type != MoveType.Slide)
             {
                 this.TranslateMoveState(MoveType.Slide);
             }
@@ -135,12 +122,12 @@ namespace PartyBall.Scripts.Entities
                 this.Position = new Vector2(this.Position.X, this.Position.Y + this.CurrentSpeed);
             }
 
-            if (state.IsKeyDown(Keys.Left))
+            if (state.IsKeyDown(Keys.Left) && this.CurrentMoveState.CanMoveLeft)
             {
                 this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
             }
 
-            if (state.IsKeyDown(Keys.Right))
+            if (state.IsKeyDown(Keys.Right) && this.CurrentMoveState.CanMoveRight)
             {
                 this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
@@ -149,7 +136,7 @@ namespace PartyBall.Scripts.Entities
             if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
             {
                 this.TranslateMoveState(MoveType.Jump);
-                _CurPlatform = null;
+                this.CurPlatform = null;
             }
         }
 
