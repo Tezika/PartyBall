@@ -54,7 +54,7 @@
     <Compile Include="Scripts\CharacterMovement\CharacterJumpState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterRollState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterFallState.cs" />
-    <Compile Include="Scripts\CharacterMovement\CharacterStickState.cs" />
+    <Compile Include="Scripts\CharacterMovement\CharacterSlideState.cs" />
     <Compile Include="Scripts\Singleton\RenderManager.cs" />
     <Compile Include="Scripts\Level\Level.cs" />
     <Compile Include="Scripts\Singleton\Debugger.cs" />

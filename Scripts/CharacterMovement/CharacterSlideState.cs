@@ -4,9 +4,9 @@ using PartyBall.Scripts.Singleton;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
-    public class CharacterStickState : CharacterMoveState
+    public class CharacterSlideState : CharacterMoveState
     {
-        public CharacterStickState(Character character) : base(character)
+        public CharacterSlideState(Character character) : base(character)
         {
         }
 
@@ -14,7 +14,7 @@ namespace PartyBall.Scripts.CharacterMovement
         {
             get
             {
-                return MoveType.Stick;
+                return MoveType.Slide;
             }
         }
 

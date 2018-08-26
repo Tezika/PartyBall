@@ -7,7 +7,7 @@ namespace PartyBall.Scripts.CharacterMovement
     {
         Roll,
         Jump,
-        Stick,
+        Slide,
         Fall
     }
 
@@ -38,6 +38,7 @@ namespace PartyBall.Scripts.CharacterMovement
     {
         public const float RollSpeed = 3.0f;
 
+        //Jump
         public const float HoverSpeed = 1.5f;
 
         public const float JumpTime = 1.5f;
@@ -48,6 +49,14 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public const float JumpDownTime = 0.6f;
 
+        //Fall
         public const float FallTime = 1.0f;
+
+        //Slide
+        public const float SlideSpeed = 0.5f;
+
+        public const float SlideTime = 1.0f;
+
+        public const float SlideEdgeScale = 0.5f;
     }
 }

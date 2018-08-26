@@ -92,25 +92,30 @@ namespace PartyBall.Scripts.Entities
             {
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
             }
-            else if (state.IsKeyDown(Keys.Down))
+
+            if (state.IsKeyDown(Keys.Down))
             {
                 this.Position = new Vector2(this.Position.X, this.Position.Y + this.CurrentSpeed);
             }
-            else if (state.IsKeyDown(Keys.Left))
+
+            if (state.IsKeyDown(Keys.Left))
             {
                 this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
             }
-            else if (state.IsKeyDown(Keys.Right))
+
+            if (state.IsKeyDown(Keys.Right))
             {
                 this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
 
+            //Jump
             if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
             {
                 this.TranslateMoveState(MoveType.Jump);
             }
 
-            if (this.CurrentMoveState.Type == MoveType.Roll || this.CurrentMoveState.Type == MoveType.Stick)
+            //Check whether the player is on a platform or not.
+            if (this.CurrentMoveState.Type == MoveType.Roll || this.CurrentMoveState.Type == MoveType.Slide)
             {
                 if(!this.CheckLandOnPlatform())
                 {
@@ -130,8 +135,7 @@ namespace PartyBall.Scripts.Entities
             this.MoveStates[(int)MoveType.Fall] = new CharacterFallState(this);
             this.MoveStates[(int)MoveType.Jump] = new CharacterJumpState(this);
             this.MoveStates[(int)MoveType.Roll] = new CharacterRollState(this);
-            this.MoveStates[(int)MoveType.Stick] = new CharacterStickState(this);
+            this.MoveStates[(int)MoveType.Slide] = new CharacterSlideState(this);
         }
-
     }
 }
