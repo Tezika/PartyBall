@@ -65,3 +65,4 @@ C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csprojAssemblyRefer
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/testPickup.xnb

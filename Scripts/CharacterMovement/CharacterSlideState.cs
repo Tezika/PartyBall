@@ -69,7 +69,9 @@ namespace PartyBall.Scripts.CharacterMovement
                 _SlideTime = Math.Abs(this.Character.Position.X + this.Character.Width / 2 - _CurWall.BoundingBox.Left) / CharacterMoveAbilities.SlideSpeed;
             }
 
+            //Scale Stuff
             _InitScale = this.Character.Scale;
+
             _Timer = 0.0f;
         }
 
@@ -88,6 +90,8 @@ namespace PartyBall.Scripts.CharacterMovement
             {
                 var positionX = 0.0f;
                 var amount = _Timer / _SlideTime;
+                //Why doesn't it work?
+                //this.Character.Scale = MathHelper.Lerp(_InitScale, 0, amount);
                 if (_SlideDirection == SlideDirection.Left)
                 {
                     positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Left - this.Character.Width/2 - 2.0f, amount);
@@ -96,7 +100,6 @@ namespace PartyBall.Scripts.CharacterMovement
                 {
                     positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Right + this.Character.Width/2 + 2.0f, amount);
                 }
-                this.Character.Scale = MathHelper.Lerp(_InitScale, CharacterMoveAbilities.SlideEdgeScale, amount);
                 this.Character.Position = new Vector2(positionX, this.Character.Position.Y);
             }
             else

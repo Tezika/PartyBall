@@ -33,6 +33,7 @@ namespace PartyBall.Scripts.Entities
         {
             this.UpdatePosition(Keyboard.GetState());
             this.UpdatePlatform();
+            this.UpdatePickups();
             if (this.CurrentMoveState != null)
             {
                 this.CurrentMoveState.Update(gameTime);
@@ -69,6 +70,19 @@ namespace PartyBall.Scripts.Entities
             this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
                          (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.Height / 2));
             this.TranslateMoveState(MoveType.Roll);
+        }
+
+        private void UpdatePickups()
+        {
+            for (int i = 0; i < Game1.Instance.Pickups.Count; i++)
+            {
+                var curPickup = Game1.Instance.Pickups[i];
+                if (curPickup.BoundingBox.Intersects(this.BoundingBox))
+                {
+                    curPickup.TakeEffect();
+                    break;
+                }
+            }
         }
 
         private void UpdatePlatform()

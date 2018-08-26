@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Entities.Pickups;
 using PartyBall.Scripts.Render;
 using PartyBall.Scripts.Singleton;
 
@@ -15,19 +16,24 @@ namespace PartyBall
     {
         public static Game1 Instance = null;
 
-        public Character Character;
-
-        public RegularPlatform RegPlatform_1;
-
-        public RegularPlatform RegPlatform_2;
-
-        public Wall Wall_1;
-
-        public Wall Wall_2;
-
         public Camera Camera { get; private set; }
 
-        public List<Platform> Platforms = new List<Platform>();
+        //Test stuff
+        public Character Character { get; private set; }
+
+        public RegularPlatform RegPlatform_1 { get; private set; }
+
+        public RegularPlatform RegPlatform_2 { get; private set; }
+
+        public Wall Wall_1 { get; private set; }
+
+        public Wall Wall_2 { get; private set; }
+
+        public List<Platform> Platforms { get; private set; }
+
+        public TestPickUp TestPickup { get; private set; }
+
+        public List<Pickup> Pickups { get; private set; }
 
         public Game1()
         {
@@ -35,6 +41,8 @@ namespace PartyBall
             this.Content.RootDirectory = "Content";
             Game1.Instance = this;
             this.Camera = new Camera();
+            this.Platforms = new List<Platform>();
+            this.Pickups = new List<Pickup>();
         }
 
         /// <summary>
@@ -58,6 +66,7 @@ namespace PartyBall
         protected override void LoadContent()
         {
             this.Platforms.Clear();
+            this.Pickups.Clear();
 
             // Create a new SpriteBatch, which can be used to draw textures.
             RenderManager.Instance.Setup(this);
@@ -72,24 +81,30 @@ namespace PartyBall
             this.RegPlatform_2 = new RegularPlatform(Content.Load<Texture2D>("texture//platform_reg"), Vector2.Zero);
             this.Wall_1 = new Wall(Content.Load<Texture2D>("texture//wall_left"), Vector2.Zero, WallSide.Left);
             this.Wall_2 = new Wall(Content.Load<Texture2D>("texture//wall_right"), Vector2.Zero, WallSide.Right);
+            this.TestPickup = new TestPickUp(Content.Load<Texture2D>("texture//testPickup"), Vector2.Zero);
 
             this.RegPlatform_1.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
                                                (float)(GraphicsDevice.Viewport.Height - this.RegPlatform_1.Height / 2));
 
             this.Wall_1.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.2),
-                                               (float)(GraphicsDevice.Viewport.Height -  1.43 * this.RegPlatform_1.Height));
+                                               (float)(GraphicsDevice.Viewport.Height -  1.5 * this.RegPlatform_1.Height));
 
-            this.Wall_2.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.9),
-                                             (float)(GraphicsDevice.Viewport.Height - 1.43 * this.RegPlatform_1.Height));
+            this.Wall_2.Position = new Vector2((float)(GraphicsDevice.Viewport.Width),
+                                             (float)(GraphicsDevice.Viewport.Height - 1.5 * this.RegPlatform_1.Height));
 
 
             this.RegPlatform_2.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
-                                                       (float)(GraphicsDevice.Viewport.Height - 3 * this.RegPlatform_1.Height));
+                                                       (float)(GraphicsDevice.Viewport.Height - 2.5 * this.RegPlatform_1.Height));
+
+            this.TestPickup.Position = new Vector2((float)(GraphicsDevice.Viewport.Width * 0.5),
+                                                       (float)(GraphicsDevice.Viewport.Height - 3.5 * this.RegPlatform_1.Height));
 
             this.Platforms.Add(this.RegPlatform_1);
             this.Platforms.Add(this.RegPlatform_2);
             this.Platforms.Add(this.Wall_1);
             this.Platforms.Add(this.Wall_2);
+
+            this.Pickups.Add(this.TestPickup);
         }
 
         /// <summary>
@@ -131,6 +146,7 @@ namespace PartyBall
             RenderManager.Instance.DrawGameObject(this.Wall_1);
             RenderManager.Instance.DrawGameObject(this.Wall_2);
             RenderManager.Instance.DrawGameObject(this.Character);
+            RenderManager.Instance.DrawGameObject(this.TestPickup);
 
             Debugger.Instance.DrawDebugInfo();
 

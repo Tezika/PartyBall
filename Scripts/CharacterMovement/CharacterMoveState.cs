@@ -85,6 +85,6 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public const float WallMoveSpeed = 1.0f;
 
-        public const float SlideEdgeScale = 0.5f;
+        public const float SlideEdgeScale = 0.3f;
     }
 }

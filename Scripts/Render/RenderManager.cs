@@ -104,7 +104,7 @@ namespace PartyBall.Scripts.Render
             this.SpriteBatch.Draw(_Pixel, new Rectangle(rectangleToDraw.X, rectangleToDraw.Y, thicknessOfBorder, rectangleToDraw.Height), borderColor);
 
             // Draw right line
-            this.SpriteBatch.Draw(_Pixel, new Rectangle((rectangleToDraw.X + rectangleToDraw.Width - thicknessOfBorder),
+            this.SpriteBatch.Draw(_Pixel, new Rectangle(rectangleToDraw.X + rectangleToDraw.Width - thicknessOfBorder,
                                             rectangleToDraw.Y,
                                             thicknessOfBorder,
                                             rectangleToDraw.Height), borderColor);

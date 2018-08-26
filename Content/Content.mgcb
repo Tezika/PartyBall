@@ -51,6 +51,18 @@
 /processorParam:TextureFormat=Color
 /build:texture/platform_reg.png
 
+#begin texture/testPickup.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:texture/testPickup.png
+
 #begin texture/wall_left.png
 /importer:TextureImporter
 /processor:TextureProcessor
