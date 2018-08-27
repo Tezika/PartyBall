@@ -42,7 +42,7 @@ namespace PartyBall.Scripts.CharacterMovement
         {
             Console.WriteLine("The character exits the Jump state");
         }
-
+1
         public override void Update(GameTime gameTime)
         {
             _Timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
