@@ -54,6 +54,17 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
+        public Rectangle BoundingBox
+        {
+            get
+            {
+                return new Rectangle((int)(this.Position.X - this.Origin.X * this.Scale),
+                                     (int)(this.Position.Y - this.Origin.Y * this.Scale),
+                                     (int)(this.Width * this.Scale),
+                                     (int)(this.Height * this.Scale));
+            }
+        }
+
         public GameObject(Texture2D texture, Vector2 position)
         {
             this.Texture = texture;

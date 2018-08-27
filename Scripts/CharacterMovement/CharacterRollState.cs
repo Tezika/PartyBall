@@ -1,16 +1,13 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
+using PartyBall.Scripts.Singleton;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
     public class CharacterRollState : CharacterMoveState
     {
-        private float _timer;
-
-        public CharacterRollState(Character character): base(character)
+        public CharacterRollState(Character character) : base(character)
         {
-            _timer = 0.0f;
         }
 
         public override MoveType Type
@@ -21,14 +18,31 @@ namespace PartyBall.Scripts.CharacterMovement
             }
         }
 
+        public override bool CanControl
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public override bool CanJump
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         public override void OnEnter()
         {
-            Console.WriteLine("PB: The character enter the roll state.");
+            Debugger.Instance.Log("The player is rolling now");
+            this.Character.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
+            this.Character.Scale = 1;
         }
 
         public override void OnExit()
         {
-            Console.WriteLine("PB: The character exit the roll state.");
         }
 
         public override void Update(GameTime gameTime)

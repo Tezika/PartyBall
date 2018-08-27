@@ -1,20 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using PartyBall.Scripts.Entities;
-using System;
+using PartyBall.Scripts.Singleton;
 
 namespace PartyBall.Scripts.CharacterMovement
 {
     public class CharacterJumpState : CharacterMoveState
     {
-        public float ScaleLimit { get; private set; }
-
-        public float JumpSpeed { get; private set; }
-
-        public float HoverTime { get; private set; }
-
         private float _Timer;
 
-        private float _ScaleAcceleration;
+        private float _InitScale;
 
         public override MoveType Type
         {
@@ -24,36 +18,64 @@ namespace PartyBall.Scripts.CharacterMovement
             }
         }
 
+        public override bool CanControl
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public override bool CanJump
+        {
+            get
+            {
+                return false;
+            }
+        }
+
         public CharacterJumpState(Character character) : base(character)
-        { 
-            this.ScaleLimit = 2.0f;
-            this.JumpSpeed = 5.0f;
-            this.HoverTime = 5.0f;
+        {
         }
 
         public override void OnEnter()
         {
-            Console.WriteLine("The character enters the Jump state");
             _Timer = 0.0f;
-            _ScaleAcceleration = (this.ScaleLimit - this.Character.Scale) / this.HoverTime;
+            _InitScale = this.Character.Scale;
+            this.Character.CurrentSpeed = CharacterMoveAbilities.HoverSpeed;
         }
 
         public override void OnExit()
         {
-            Console.WriteLine("The character exits the Jump state");
         }
 1
         public override void Update(GameTime gameTime)
         {
+            //Jump logic, 
             _Timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (_Timer <= this.HoverTime)
+            if (_Timer < CharacterMoveAbilities.JumpTime)
             {
-                this.Character.Scale += _ScaleAcceleration;
+                Debugger.Instance.Log("The character is jumping up now.");
+                var amount = _Timer / CharacterMoveAbilities.JumpTime;
+                this.Character.Scale = MathHelper.Lerp(_InitScale, CharacterMoveAbilities.HoverScale, amount);
+            }
+            else if (_Timer >= CharacterMoveAbilities.JumpTime
+                    && _Timer < CharacterMoveAbilities.JumpTime + CharacterMoveAbilities.HoverTime)
+            {
+                Debugger.Instance.Log("The character is hovering now.");
+            }
+            else if (_Timer >= CharacterMoveAbilities.JumpTime + CharacterMoveAbilities.HoverTime
+                    && _Timer < CharacterMoveAbilities.JumpTime + CharacterMoveAbilities.HoverTime + CharacterMoveAbilities.JumpDownTime)
+            {
+                var amount = (_Timer - CharacterMoveAbilities.JumpTime - CharacterMoveAbilities.HoverTime) / CharacterMoveAbilities.JumpDownTime;
+                this.Character.Scale = MathHelper.Lerp(CharacterMoveAbilities.HoverScale, _InitScale, amount);
+                Debugger.Instance.Log("The character is jumping down now");
             }
             else
             {
-                _Timer = 0.0f;
-                this.Character.TranslateMoveState(MoveType.Fall);
+                Debugger.Instance.Log("The character is landing now");
+                //Check the player is on the platform 
+                this.Character.TranslateMoveState(MoveType.Roll);
             }
         }
     }

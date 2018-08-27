@@ -5,6 +5,14 @@ namespace PartyBall.Scripts.Entities
 {
     public class RegularPlatform: Platform
     {
+        public override PlatformType Type
+        {
+            get
+            {
+                return PlatformType.Regular;
+            }
+        }
+
         public RegularPlatform(Texture2D texture, Vector2 position) : base(texture, position)
         {
             
@@ -14,6 +22,5 @@ namespace PartyBall.Scripts.Entities
         {
             base.Draw(gameTime);
         }
-
     }
 }
