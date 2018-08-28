@@ -15,6 +15,8 @@ namespace PartyBall.Scripts.Render
 
         public SpriteBatch SpriteBatch { get; set; }
 
+        public Rectangle RectBackground { get; private set; }
+
         public int ScreenHeight
         {
             get
@@ -53,11 +55,14 @@ namespace PartyBall.Scripts.Render
 
         public void Setup(Game gameInstance)
         {
-            //Setup window size
+            //Setup window size and rect size
             this.Graphics.PreferredBackBufferWidth = 320;
             this.Graphics.PreferredBackBufferHeight = 640;
             this.Graphics.ApplyChanges();
 
+            this.RectBackground = new Rectangle(0, 0, this.Graphics.PreferredBackBufferWidth, this.Graphics.PreferredBackBufferHeight);
+
+            
             this.SpriteBatch = new SpriteBatch(gameInstance.GraphicsDevice);
 
             // Somewhere in your LoadContent() method:

@@ -39,12 +39,10 @@ C:/Users/u1216510/source/repos/PartyBall/PartyBall/obj/Debug/PartyBall.csprojAss
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/character.xnb
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/testPickup.xnb
 C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csproj.CoreCompileInputs.cache
 C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.exe
 C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.pdb
@@ -175,3 +173,4 @@ C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/text
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickupAnimation.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shipAnimation.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/startScreen.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/bgscreen.xnb

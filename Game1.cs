@@ -153,7 +153,6 @@ namespace PartyBall
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // TODO: Add your drawing code here
-            this.CurLevel.Draw(gameTime);
             spriteBatch.Begin();
             switch (GameState)
             {
@@ -170,7 +169,8 @@ namespace PartyBall
 
             //Draw title!!!
             RenderManager.Instance.DrawString("PartyBaller", Debugger.Instance.Font, new Vector2((float)0.4 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width,
-                                                                                                  (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
+                     
+                                                                                                 (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
             base.Draw(gameTime);
         }
         private void DrawStartMenu()
@@ -195,7 +195,6 @@ namespace PartyBall
 
         private void DrawGamePlay(GameTime gameTime)
         {
-            //spriteBatch.Draw(Graphics.Background, rectBackground, Color.White);
             this.CurLevel.Draw(gameTime);
         }
     }

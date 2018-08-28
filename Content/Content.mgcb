@@ -243,7 +243,7 @@
 /processorParam:TextureFormat=Compressed
 /build:spritefont/debug.spritefont
 
-#begin texture/character.png
+#begin texture/bgscreen.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -253,7 +253,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:texture/character.png
+/build:texture/bgscreen.png
 
 #begin texture/characterBall.png
 /importer:TextureImporter
@@ -314,18 +314,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:texture/StartScreen.png
-
-#begin texture/testPickup.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:texture/testPickup.png
 
 #begin texture/wall_left.png
 /importer:TextureImporter

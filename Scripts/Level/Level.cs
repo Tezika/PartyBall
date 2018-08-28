@@ -41,16 +41,18 @@ namespace PartyBall.Scripts.Level
             //Load the content
             //Test level layout only by hard coding
             this.Character = new Character(Graphics.Ball, Vector2.Zero);
-            var regPlatform_1 = new RegularPlatform(Graphics.Reg_Platform, Vector2.Zero, 0.4f);
-            var regPlatform_2 = new RegularPlatform(Graphics.Reg_Platform, Vector2.Zero, 0.4f);
-            var wall_1 = new Wall(Graphics.Wall_Left, Vector2.Zero, WallSide.Left);
-            var wall_2 = new Wall(Graphics.Wall_Right, Vector2.Zero, WallSide.Right);
-            var wall_3 = new Wall(Graphics.Wall_Left, Vector2.Zero, WallSide.Left);
-            var wall_4 = new Wall(Graphics.Wall_Right, Vector2.Zero, WallSide.Right);
+            var platformScale = 0.4f;
+            var wallScale = 0.25f;
+            var regPlatform_1 = new RegularPlatform(Graphics.Reg_Platform, Vector2.Zero, platformScale);
+            var regPlatform_2 = new RegularPlatform(Graphics.Reg_Platform, Vector2.Zero, platformScale);
+            var wall_1 = new Wall(Graphics.Wall_Left, Vector2.Zero, WallSide.Left, wallScale);
+            var wall_2 = new Wall(Graphics.Wall_Right, Vector2.Zero, WallSide.Right, wallScale);
+            var wall_3 = new Wall(Graphics.Wall_Left, Vector2.Zero, WallSide.Left, wallScale);
+            var wall_4 = new Wall(Graphics.Wall_Right, Vector2.Zero, WallSide.Right, wallScale);
             var testPickup = new TestPickUp(Graphics.ShadesPickup, Vector2.Zero);
 
             var layoutHeight = regPlatform_1.Height * regPlatform_2.Scale;
-             
+
             regPlatform_1.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                  (float)(graphicsDevice.Viewport.Height - 0.5 * layoutHeight));
 
@@ -99,6 +101,10 @@ namespace PartyBall.Scripts.Level
 
         public void Draw(GameTime gameTime)
         {
+            //Draw the game background
+            RenderManager.Instance.SpriteBatch.Begin();
+            RenderManager.Instance.SpriteBatch.Draw(Graphics.BgScreen, RenderManager.Instance.RectBackground, Color.White);
+            RenderManager.Instance.SpriteBatch.End();
             //Draw all the game objects here
             //First for pickups
             for (int i = 0; i < this.Pickups.Count; i++)
