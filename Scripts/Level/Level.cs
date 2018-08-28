@@ -73,7 +73,7 @@ namespace PartyBall.Scripts.Level
 
 
             testPickup.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       (float)(graphicsDevice.Viewport.Height - 5.2 * layoutHeight));
+                                                       (float)(graphicsDevice.Viewport.Height - 5.3 * layoutHeight));
 
             this.Platforms.Add(regPlatform_1);
             this.Platforms.Add(regPlatform_2);
