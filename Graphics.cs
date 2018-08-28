@@ -31,6 +31,8 @@ namespace PartyBall
 
         public static Texture2D Reg_Platform;
 
+        public static Texture2D ShadesPickup;
+
         public static void load(ContentManager content)
         {
          
@@ -49,12 +51,13 @@ namespace PartyBall
 
             Font = content.Load<SpriteFont>("Graphics\\gameFont");
 
+            //Modify by Tezika
             StartMenu = content.Load<Texture2D>("texture\\StartScreen");
-            
             Ball = content.Load<Texture2D>("texture\\characterball");
             Wall_Left = content.Load<Texture2D>("texture\\wall_left");
             Wall_Right = content.Load<Texture2D>("texture\\wall_right");
             Reg_Platform = content.Load<Texture2D>("texture\\pipesegment");
+            ShadesPickup = content.Load<Texture2D>("texture\\shadesPickup");
         }
     }
 }

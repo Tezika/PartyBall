@@ -22,7 +22,7 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
-        public Wall(Texture2D texture, Vector2 position, WallSide side = WallSide.Left) : base(texture, position)
+        public Wall(Texture2D texture, Vector2 position, WallSide side = WallSide.Left, float scale = 1.0f) : base(texture, position, scale)
         {
             this.Side = side;
         }

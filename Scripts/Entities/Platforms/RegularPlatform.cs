@@ -13,7 +13,7 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
-        public RegularPlatform(Texture2D texture, Vector2 position) : base(texture, position)
+        public RegularPlatform(Texture2D texture, Vector2 position, float scale = 1.0f) : base(texture, position, scale)
         {
             
         }

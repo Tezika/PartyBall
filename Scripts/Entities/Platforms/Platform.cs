@@ -13,9 +13,9 @@ namespace PartyBall.Scripts.Entities
     {
         public virtual PlatformType Type { get; }
 
-        public Platform(Texture2D texture, Vector2 position) : base(texture, position)
+        public Platform(Texture2D texture, Vector2 position, float scale = 1.0f) : base(texture, position)
         {
-
+            this.Scale = scale;
         }
 
         public override void Draw(GameTime gameTime)

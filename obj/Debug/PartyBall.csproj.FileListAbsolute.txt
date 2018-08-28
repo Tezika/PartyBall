@@ -45,106 +45,133 @@ C:/Users/u1216510/source/repos/PartyBall/PartyBall/obj/Debug/PartyBall.csprojAss
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/testPickup.xnb
-C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.csproj.CoreCompileInputs.cache
-C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.exe
-C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.pdb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\character.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\platform_reg.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\testPickup.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\wall_left.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\wall_right.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\spritefont\debug.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\PartyBall.exe
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\PartyBall.pdb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.csproj.CopyComplete
-C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.csprojAssemblyReference.cache
+C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csproj.CoreCompileInputs.cache
+C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.exe
+C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.pdb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/character.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/testPickup.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/spritefont/debug.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/PartyBall.exe
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/PartyBall.pdb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
+C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
+C:/Users/u1216510/source/repos/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
 =======
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Sound\explosion.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Sound\gameMusic.ogg
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Sound\gameMusic.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Sound\laserFire.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Sound\menuMusic.ogg
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Sound\menuMusic.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\spritefont\debug.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\character.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\platform_reg.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\testPickup.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\wall_left.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\wall_right.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\bgLayer1.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\bgLayer2.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\endMenu.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\explosion.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\gameFont.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\healthBar.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\laser.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mainbackground.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mainMenu.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mine.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mineAnimation.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\player.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\playerAnimation.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\shadesPickup.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\shadesPickupAnimation.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\shipAnimation.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\startScreen.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\PartyBall.exe
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\PartyBall.pdb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\obj\Debug\PartyBall.csprojAssemblyReference.cache
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\obj\Debug\PartyBall.csproj.CoreCompileInputs.cache
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\obj\Debug\PartyBall.csproj.CopyComplete
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\obj\Debug\PartyBall.exe
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\obj\Debug\PartyBall.pdb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\characterBall.xnb
-C:\Users\Admin\source\repos\EAE Projects\PartyBaller\bin\DesktopGL\AnyCPU\Debug\Content\texture\shadesPickup.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\characterBall.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\shadesPickup.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\bgLayer1.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\bgLayer2.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\endMenu.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\explosion.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\gameFont.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\healthBar.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\laser.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mainbackground.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mainMenu.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mine.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\mineAnimation.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\player.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\playerAnimation.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\shadesPickup.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\shadesPickupAnimation.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\shipAnimation.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Graphics\startScreen.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\explosion.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\gameMusic.ogg
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\gameMusic.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\laserFire.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\menuMusic.ogg
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\menuMusic.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\StartScreen.xnb
-C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\pipesegment.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/explosion.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.ogg
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/laserFire.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.ogg
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/spritefont/debug.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/character.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/testPickup.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer1.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer2.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/endMenu.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/explosion.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/gameFont.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/healthBar.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/laser.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainbackground.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainMenu.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mine.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mineAnimation.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/player.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/playerAnimation.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickup.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickupAnimation.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shipAnimation.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/startScreen.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/PartyBall.exe
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/PartyBall.pdb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.csprojAssemblyReference.cache
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.csproj.CoreCompileInputs.cache
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.csproj.CopyComplete
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.exe
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.pdb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterBall.xnb
+C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/texture/shadesPickup.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterBall.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/shadesPickup.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer1.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer2.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/endMenu.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/explosion.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/gameFont.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/healthBar.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/laser.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainbackground.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainMenu.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mine.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mineAnimation.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/player.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/playerAnimation.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickup.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickupAnimation.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shipAnimation.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/startScreen.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/explosion.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.ogg
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/laserFire.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.ogg
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/StartScreen.xnb
+C:/Users/u1216510/source/repos/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipesegment.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/explosion.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.ogg
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/laserFire.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.ogg
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/StartScreen.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterBall.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipesegment.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/shadesPickup.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer1.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer2.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/endMenu.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/explosion.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/gameFont.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/healthBar.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/laser.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainMenu.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainbackground.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mine.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mineAnimation.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/player.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/playerAnimation.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickup.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickupAnimation.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shipAnimation.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/startScreen.xnb
