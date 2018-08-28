@@ -47,7 +47,6 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public override void OnExit()
         {
-            this.Character.Scale = 1;
         }
 
         public override void Update(GameTime gameTime)

@@ -58,6 +58,7 @@ namespace PartyBall.Scripts.CharacterMovement
             this.CanMoveRight = false;
             //Scale Stuff
             _InitScale = this.Character.Scale;
+            this.Character.Scale = 1.0f;
 
             this.Character.CurrentSpeed = CharacterMoveAbilities.WallMoveSpeed;
             _CurWall = this.Character.CurPlatform as Wall;
@@ -73,7 +74,7 @@ namespace PartyBall.Scripts.CharacterMovement
                 _SlideDirection = SlideDirection.Left;
                 _SlideTime = distance / CharacterMoveAbilities.SlideSpeed;
             }
-                    
+
             _Timer = 0.0f;
         }
 
@@ -96,11 +97,11 @@ namespace PartyBall.Scripts.CharacterMovement
                 this.Character.Scale = MathHelper.Lerp(_InitScale, CharacterMoveAbilities.SlideEdgeScale, amount * 5);
                 if (_SlideDirection == SlideDirection.Left)
                 {
-                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Left - this.Character.Width/2 - 2.0f, amount);
+                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Left - this.Character.Width / 2 - 2.0f, amount);
                 }
                 else
                 {
-                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Right + this.Character.Width/2 + 2.0f, amount);
+                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Right + this.Character.Width / 2 + 2.0f, amount);
                 }
                 this.Character.Position = new Vector2(positionX, this.Character.Position.Y);
             }
