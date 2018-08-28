@@ -164,13 +164,7 @@ namespace PartyBall
                     break;
             }
             spriteBatch.End();
-
             Debugger.Instance.DrawDebugInfo();
-
-            //Draw title!!!
-            RenderManager.Instance.DrawString("PartyBaller", Debugger.Instance.Font, new Vector2((float)0.4 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width,
-                     
-                                                                                                 (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
             base.Draw(gameTime);
         }
         private void DrawStartMenu()
