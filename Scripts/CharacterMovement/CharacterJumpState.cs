@@ -48,7 +48,7 @@ namespace PartyBall.Scripts.CharacterMovement
         public override void OnExit()
         {
         }
-1
+
         public override void Update(GameTime gameTime)
         {
             //Jump logic, 
