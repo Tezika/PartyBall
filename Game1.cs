@@ -54,7 +54,6 @@ namespace PartyBall
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             RenderManager.Instance.Setup(this);
             Debugger.Instance.Setup(this);
 
