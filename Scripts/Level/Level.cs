@@ -40,14 +40,14 @@ namespace PartyBall.Scripts.Level
 
             //Load the content
             //Test level layout only by hard coding
-            this.Character = new Character(content.Load<Texture2D>("texture//character"), Vector2.Zero);
+            this.Character = new Character(content.Load<Texture2D>("texture//characterBall"), Vector2.Zero);
             var regPlatform_1 = new RegularPlatform(content.Load<Texture2D>("texture//platform_reg"), Vector2.Zero);
             var regPlatform_2 = new RegularPlatform(content.Load<Texture2D>("texture//platform_reg"), Vector2.Zero);
             var wall_1 = new Wall(content.Load<Texture2D>("texture//wall_left"), Vector2.Zero, WallSide.Left);
             var wall_2 = new Wall(content.Load<Texture2D>("texture//wall_right"), Vector2.Zero, WallSide.Right);
             var wall_3 = new Wall(content.Load<Texture2D>("texture//wall_left"), Vector2.Zero, WallSide.Left);
             var wall_4 = new Wall(content.Load<Texture2D>("texture//wall_right"), Vector2.Zero, WallSide.Right);
-            var testPickup = new TestPickUp(content.Load<Texture2D>("texture//testPickup"), Vector2.Zero);
+            var testPickup = new TestPickUp(content.Load<Texture2D>("texture//shadesPickup"), Vector2.Zero);
 
             var layoutHeight = regPlatform_1.Height;
 

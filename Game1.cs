@@ -1,6 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using PartyBall.Scripts.Level;
 using PartyBall.Scripts.Render;
 using PartyBall.Scripts.Singleton;
@@ -12,6 +13,13 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
+        SpriteBatch spriteBatch;
+        enum GameStates { Start, Playing }
+        enum MenuOptions { Start = 30, Restart = 500, Quit = 190 }
+        GameStates GameState;
+        MenuOptions menuCursor;
+        Rectangle rectBackground;
+
         public static Game1 Instance = null;
 
         public Level CurLevel { get; private set; }
@@ -33,6 +41,9 @@ namespace PartyBall
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            GameState = GameStates.Start;
+            menuCursor = MenuOptions.Start;
+
             base.Initialize();
             this.CurLevel.Initialize();
         }
@@ -46,6 +57,12 @@ namespace PartyBall
             // Create a new SpriteBatch, which can be used to draw textures.
             RenderManager.Instance.Setup(this);
             Debugger.Instance.Setup(this);
+
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Graphics.load(Content);
+            Sound.load(Content);
+            rectBackground = new Rectangle(0, 0, 320, 640);
 
             // TODO: use this.Content to load your game content here
             // Load the player resources
@@ -70,12 +87,62 @@ namespace PartyBall
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
+            Input.GetInputState();
+            switch (GameState)
+            {
+                case GameStates.Start:
+                    UpdateStartMenu();
+                    break;
+                case GameStates.Playing:
+                    UpdateGamePlay(gameTime);
+                    break;
+            }
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
             this.CurLevel.Update(gameTime);
             base.Update(gameTime);
+        }
+
+
+        private void UpdateStartMenu()
+        {
+            if (MediaPlayer.State != MediaState.Playing)
+                MediaPlayer.Play(Sound.MenuMusic);
+
+            if (Input.Start())
+            {
+                if (menuCursor == MenuOptions.Quit)
+                    Exit();
+
+                GameState = GameStates.Playing;
+                MediaPlayer.Stop();
+            }
+
+            if (Input.Right()) menuCursor = MenuOptions.Quit;
+            if (Input.Left()) menuCursor = MenuOptions.Start;
+        }
+
+        private void UpdateGameOverScreen()
+        {
+            if (Input.Start())
+            {
+                if (menuCursor == MenuOptions.Quit)
+                    Exit();
+                GameState = GameStates.Playing;
+            }
+
+            if (Input.Down()) menuCursor = MenuOptions.Quit;
+            if (Input.Up()) menuCursor = MenuOptions.Restart;
+        }
+
+        private void UpdateGamePlay(GameTime gameTime)
+        {
+            if (MediaPlayer.State != MediaState.Playing)
+                MediaPlayer.Play(Sound.GameMusic);
+            this.CurLevel.Update(gameTime);
         }
 
         /// <summary>
@@ -87,12 +154,49 @@ namespace PartyBall
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // TODO: Add your drawing code here
             this.CurLevel.Draw(gameTime);
+            spriteBatch.Begin();
+            switch (GameState)
+            {
+                case GameStates.Start:
+                    DrawStartMenu();
+                    break;
+                case GameStates.Playing:
+                    DrawGamePlay(gameTime);
+                    break;
+            }
+            spriteBatch.End();
+
             Debugger.Instance.DrawDebugInfo();
 
             //Draw title!!!
             RenderManager.Instance.DrawString("PartyBaller", Debugger.Instance.Font, new Vector2((float)0.4 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width,
                                                                                                   (float)0.01 * RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height));
             base.Draw(gameTime);
+        }
+        private void DrawStartMenu()
+        {
+            spriteBatch.Draw(Graphics.StartMenu, rectBackground, Color.White);
+
+            spriteBatch.DrawString(Graphics.Font, ">", new Vector2((int)menuCursor, 500), Color.White);
+            spriteBatch.DrawString(Graphics.Font, "Start", new Vector2(50, 500), Color.White);
+            spriteBatch.DrawString(Graphics.Font, "Quit", new Vector2(210, 500), Color.White);
+        }
+
+        private void DrawGameOverScreen()
+        {
+            spriteBatch.Draw(Graphics.GameOverScreen, rectBackground, Color.White);
+
+            //RenderManager.Instance.SpriteBatch.DrawString(Graphics.Font, "Final Score: " + score, new Vector2(300, 200), Color.White);
+
+            spriteBatch.DrawString(Graphics.Font, ">", new Vector2(325, (int)menuCursor), Color.White);
+            spriteBatch.DrawString(Graphics.Font, "Restart", new Vector2(350, 300), Color.White);
+            spriteBatch.DrawString(Graphics.Font, "Quit", new Vector2(350, 340), Color.White);
+        }
+
+        private void DrawGamePlay(GameTime gameTime)
+        {
+            //spriteBatch.Draw(Graphics.Background, rectBackground, Color.White);
+            this.CurLevel.Draw(gameTime);
         }
     }
 }
