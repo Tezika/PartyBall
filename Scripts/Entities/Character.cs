@@ -74,9 +74,9 @@ namespace PartyBall.Scripts.Entities
 
         private void UpdatePickups()
         {
-            for (int i = 0; i < Game1.Instance.Pickups.Count; i++)
+            for (int i = 0; i < Game1.Instance.CurLevel.Pickups.Count; i++)
             {
-                var curPickup = Game1.Instance.Pickups[i];
+                var curPickup = Game1.Instance.CurLevel.Pickups[i];
                 if (curPickup.BoundingBox.Intersects(this.BoundingBox))
                 {
                     curPickup.TakeEffect();
@@ -93,9 +93,9 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
             this.CurPlatform = null;
-            for (int i = 0; i < Game1.Instance.Platforms.Count; i++)
+            for (int i = 0; i < Game1.Instance.CurLevel.Platforms.Count; i++)
             {
-                var platform = Game1.Instance.Platforms[i];
+                var platform = Game1.Instance.CurLevel.Platforms[i];
                 if (platform.BoundingBox.Intersects(this.BoundingBox))
                 {
                     this.CurPlatform = platform;
