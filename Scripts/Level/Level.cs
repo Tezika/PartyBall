@@ -45,28 +45,43 @@ namespace PartyBall.Scripts.Level
             var regPlatform_2 = new RegularPlatform(content.Load<Texture2D>("texture//platform_reg"), Vector2.Zero);
             var wall_1 = new Wall(content.Load<Texture2D>("texture//wall_left"), Vector2.Zero, WallSide.Left);
             var wall_2 = new Wall(content.Load<Texture2D>("texture//wall_right"), Vector2.Zero, WallSide.Right);
+            var wall_3 = new Wall(content.Load<Texture2D>("texture//wall_left"), Vector2.Zero, WallSide.Left);
+            var wall_4 = new Wall(content.Load<Texture2D>("texture//wall_right"), Vector2.Zero, WallSide.Right);
             var testPickup = new TestPickUp(content.Load<Texture2D>("texture//testPickup"), Vector2.Zero);
 
+            var layoutHeight = regPlatform_1.Height;
+
             regPlatform_1.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                               (float)(graphicsDevice.Viewport.Height - regPlatform_1.Height / 2));
+                                                 (float)(graphicsDevice.Viewport.Height - 0.5 * layoutHeight));
 
             wall_1.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.2),
-                                               (float)(graphicsDevice.Viewport.Height - 1.5 * regPlatform_1.Height));
+                                               (float)(graphicsDevice.Viewport.Height - 1.7 * layoutHeight));
 
             wall_2.Position = new Vector2((float)(graphicsDevice.Viewport.Width),
-                                             (float)(graphicsDevice.Viewport.Height - 1.5 * regPlatform_1.Height));
+                                             (float)(graphicsDevice.Viewport.Height - 1.7 * layoutHeight));
 
 
             regPlatform_2.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       (float)(graphicsDevice.Viewport.Height - 2.5 * regPlatform_1.Height));
+                                                       (float)(graphicsDevice.Viewport.Height - 2.7 * layoutHeight));
+
+
+            wall_3.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.2),
+                                               (float)(graphicsDevice.Viewport.Height - 4 * layoutHeight));
+
+            wall_4.Position = new Vector2((float)(graphicsDevice.Viewport.Width),
+                                             (float)(graphicsDevice.Viewport.Height - 4.6 * layoutHeight));
+
 
             testPickup.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       (float)(graphicsDevice.Viewport.Height - 3.5 * regPlatform_1.Height));
+                                                       (float)(graphicsDevice.Viewport.Height - 5.2 * layoutHeight));
 
             this.Platforms.Add(regPlatform_1);
             this.Platforms.Add(regPlatform_2);
+
             this.Platforms.Add(wall_1);
             this.Platforms.Add(wall_2);
+            this.Platforms.Add(wall_3);
+            this.Platforms.Add(wall_4);
 
             this.Pickups.Add(testPickup);
 

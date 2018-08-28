@@ -66,7 +66,7 @@ namespace PartyBall.Scripts.Entities
             Debugger.Instance.Log("The character has already respawned");
             this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
             this.Scale = 1;
-            //Reset the player's 
+            //Reset the player's position
             this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
                          (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.Height / 2));
             this.TranslateMoveState(MoveType.Roll);
