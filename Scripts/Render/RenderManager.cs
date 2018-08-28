@@ -71,7 +71,7 @@ namespace PartyBall.Scripts.Render
             {
                 return;
             }
-            this.SpriteBatch.Begin(transformMatrix: Game1.Instance.Camera.Transform);
+            this.SpriteBatch.Begin(transformMatrix: Game1.Instance.CurLevel.Camera.Transform);
             this.SpriteBatch.Draw(texture: gameObject.Texture,
                                   position: gameObject.Position,
                                   sourceRectangle: null,

@@ -13,7 +13,7 @@ namespace PartyBall.Scripts.Entities.Pickups
         public override void TakeEffect()
         {
             base.TakeEffect();
-            Game1.Instance.Character.Respawn();
+            Game1.Instance.CurLevel.Character.Respawn();
         }
     }
 }

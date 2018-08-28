@@ -66,7 +66,7 @@ namespace PartyBall.Scripts.Entities
             Debugger.Instance.Log("The character has already respawned");
             this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
             this.Scale = 1;
-            //Reset the player's 
+            //Reset the player's position
             this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
                          (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.Height / 2));
             this.TranslateMoveState(MoveType.Roll);
@@ -74,9 +74,9 @@ namespace PartyBall.Scripts.Entities
 
         private void UpdatePickups()
         {
-            for (int i = 0; i < Game1.Instance.Pickups.Count; i++)
+            for (int i = 0; i < Game1.Instance.CurLevel.Pickups.Count; i++)
             {
-                var curPickup = Game1.Instance.Pickups[i];
+                var curPickup = Game1.Instance.CurLevel.Pickups[i];
                 if (curPickup.BoundingBox.Intersects(this.BoundingBox))
                 {
                     curPickup.TakeEffect();
@@ -93,9 +93,9 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
             this.CurPlatform = null;
-            for (int i = 0; i < Game1.Instance.Platforms.Count; i++)
+            for (int i = 0; i < Game1.Instance.CurLevel.Platforms.Count; i++)
             {
-                var platform = Game1.Instance.Platforms[i];
+                var platform = Game1.Instance.CurLevel.Platforms[i];
                 if (platform.BoundingBox.Intersects(this.BoundingBox))
                 {
                     this.CurPlatform = platform;
