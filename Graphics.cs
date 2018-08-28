@@ -47,7 +47,6 @@ namespace PartyBall
 
             Font = content.Load<SpriteFont>("Graphics\\gameFont");
 
-            //
             Ball = content.Load<Texture2D>("texture//characterball");
             Wall_Left = content.Load<Texture2D>("texture//wall_left");
             Wall_Right = content.Load<Texture2D>("texture//wall_right");

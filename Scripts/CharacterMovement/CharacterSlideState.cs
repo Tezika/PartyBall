@@ -88,6 +88,7 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public override void Update(GameTime gameTime)
         {
+
             _Timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (_Timer < _SlideTime)
             {
