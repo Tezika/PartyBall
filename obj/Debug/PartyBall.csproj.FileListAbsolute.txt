@@ -45,7 +45,6 @@ C:/Users/u1216510/source/repos/PartyBall/PartyBall/obj/Debug/PartyBall.csprojAss
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/testPickup.xnb
-
 C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.csproj.CoreCompileInputs.cache
 C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.exe
 C:\Users\u1216510\source\repos\PartyBall\obj\Debug\PartyBall.pdb
@@ -147,3 +146,5 @@ C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Soun
 C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\laserFire.xnb
 C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\menuMusic.ogg
 C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\Sound\menuMusic.xnb
+C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\StartScreen.xnb
+C:\Users\u1216510\source\repos\PartyBall\bin\DesktopGL\AnyCPU\Debug\Content\texture\pipesegment.xnb

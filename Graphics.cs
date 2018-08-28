@@ -29,9 +29,11 @@ namespace PartyBall
 
         public static Texture2D Wall_Right;
 
+        public static Texture2D Reg_Platform;
+
         public static void load(ContentManager content)
         {
-            StartMenu = content.Load<Texture2D>("Graphics\\startScreen");
+         
             GameOverScreen = content.Load<Texture2D>("Graphics\\endMenu");
 
             Player = content.Load<Texture2D>("Graphics\\playerAnimation");
@@ -47,9 +49,12 @@ namespace PartyBall
 
             Font = content.Load<SpriteFont>("Graphics\\gameFont");
 
-            Ball = content.Load<Texture2D>("texture//characterball");
-            Wall_Left = content.Load<Texture2D>("texture//wall_left");
-            Wall_Right = content.Load<Texture2D>("texture//wall_right");
+            StartMenu = content.Load<Texture2D>("texture\\StartScreen");
+            
+            Ball = content.Load<Texture2D>("texture\\characterball");
+            Wall_Left = content.Load<Texture2D>("texture\\wall_left");
+            Wall_Right = content.Load<Texture2D>("texture\\wall_right");
+            Reg_Platform = content.Load<Texture2D>("texture\\pipesegment");
         }
     }
 }

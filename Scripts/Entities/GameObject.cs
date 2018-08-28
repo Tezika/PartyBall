@@ -30,6 +30,8 @@ namespace PartyBall.Scripts.Entities
 
         public event EventHandler<EventArgs> VisibleChanged;
 
+        public float TextureRatio { get; set; }
+
         public int Width
         {
             get
