@@ -109,7 +109,7 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
 
-            if (this.CurPlatform.Type == PlatformType.Regular && this.CurrentMoveState.Type != MoveType.Roll)
+            if (this.CurPlatform.Type == PlatformType.Pipe && this.CurrentMoveState.Type != MoveType.Roll)
             {
                 this.TranslateMoveState(MoveType.Roll);
             }

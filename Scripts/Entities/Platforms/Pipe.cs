@@ -3,17 +3,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PartyBall.Scripts.Entities
 {
-    public class RegularPlatform: Platform
+    public class Pipe: Platform
     {
         public override PlatformType Type
         {
             get
             {
-                return PlatformType.Regular;
+                return PlatformType.Pipe;
             }
         }
 
-        public RegularPlatform(Texture2D texture, Vector2 position, float scale = 1.0f) : base(texture, position, scale)
+        public Pipe(Texture2D texture, Vector2 position, float scale = 1.0f) : base(texture, position, scale)
         {
             
         }
