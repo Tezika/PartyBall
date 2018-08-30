@@ -30,7 +30,7 @@ namespace PartyBall.Scripts.Level
         public void Initialize()
         {
             this.Character.Initialize();
-            this.Character.Respawn();
+            this.Character.Spawn();
         }
 
         public void LoadContent(Game game)

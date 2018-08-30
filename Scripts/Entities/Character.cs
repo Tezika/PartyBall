@@ -61,7 +61,7 @@ namespace PartyBall.Scripts.Entities
             this.CurrentMoveState.OnEnter();
         }
 
-        public void Respawn()
+        public void Spawn()
         {
             Debugger.Instance.Log("The character has already respawned");
             this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
