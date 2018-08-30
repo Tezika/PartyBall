@@ -103,7 +103,7 @@ namespace PartyBall.Scripts.Entities
                 }
             }
 
-            if (this.CurPlatform == null)          
+            if (this.CurPlatform == null)
             {
                 this.TranslateMoveState(MoveType.Fall);
                 return;
@@ -127,22 +127,22 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
 
-            if (state.IsKeyDown(Keys.Up))
+            if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
             }
 
-            if (state.IsKeyDown(Keys.Down))
+            if (state.IsKeyDown(Keys.Down) || state.IsKeyDown(Keys.S))
             {
                 this.Position = new Vector2(this.Position.X, this.Position.Y + this.CurrentSpeed);
             }
 
-            if (state.IsKeyDown(Keys.Left) && this.CurrentMoveState.CanMoveLeft)
+            if (this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
             {
                 this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
             }
 
-            if (state.IsKeyDown(Keys.Right) && this.CurrentMoveState.CanMoveRight)
+            if (this.CurrentMoveState.CanMoveRight && (state.IsKeyDown(Keys.D) || state.IsKeyDown(Keys.Right)))
             {
                 this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
