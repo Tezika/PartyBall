@@ -31,8 +31,8 @@ namespace PartyBall.Scripts.Entities
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
-            this.UpdatePosition(Keyboard.GetState());
             this.UpdatePlatform();
+            this.UpdatePosition(Keyboard.GetState());
             this.UpdatePickups();
             if (this.CurrentMoveState != null)
             {
