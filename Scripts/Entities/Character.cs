@@ -31,8 +31,8 @@ namespace PartyBall.Scripts.Entities
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
-            this.UpdatePosition(Keyboard.GetState());
             this.UpdatePlatform();
+            this.UpdatePosition(Keyboard.GetState());
             this.UpdatePickups();
             if (this.CurrentMoveState != null)
             {
@@ -109,7 +109,7 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
 
-            if (this.CurPlatform.Type == PlatformType.Regular && this.CurrentMoveState.Type != MoveType.Roll)
+            if (this.CurPlatform.Type == PlatformType.Pipe && this.CurrentMoveState.Type != MoveType.Roll)
             {
                 this.TranslateMoveState(MoveType.Roll);
             }

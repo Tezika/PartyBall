@@ -19,7 +19,7 @@ namespace PartyBall
 
         public static Texture2D Wall_Right;
 
-        public static Texture2D Reg_Platform;
+        public static Texture2D Pipe;
 
         public static Texture2D ShadesPickup;
 
@@ -35,7 +35,7 @@ namespace PartyBall
             Ball = content.Load<Texture2D>("texture\\characterball");
             Wall_Left = content.Load<Texture2D>("texture\\wall_left");
             Wall_Right = content.Load<Texture2D>("texture\\wall_right");
-            Reg_Platform = content.Load<Texture2D>("texture\\pipesegment");
+            Pipe = content.Load<Texture2D>("texture\\pipesegment");
             ShadesPickup = content.Load<Texture2D>("texture\\shadesPickup");
             BgScreen = content.Load<Texture2D>("texture\\bgscreen");
         }

@@ -60,7 +60,7 @@
     <Compile Include="Scripts\Render\RenderManager.cs" />
     <Compile Include="Scripts\Render\Camera.cs" />
     <Compile Include="Scripts\Entities\Platforms\Platform.cs" />
-    <Compile Include="Scripts\Entities\Platforms\RegularPlatform.cs" />
+    <Compile Include="Scripts\Entities\Platforms\Pipe.cs" />
     <Compile Include="Scripts\Entities\Platforms\Wall.cs" />
     <Compile Include="Scripts\Entities\Pickups\Pickup.cs" />
     <Compile Include="Scripts\Entities\Pickups\TestPickUp.cs" />
