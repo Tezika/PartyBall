@@ -19,7 +19,7 @@ namespace PartyBall
 
         public static Texture2D Wall_Right;
 
-        public static Texture2D Pipe;
+        public static Texture2D Reg_Platform;
 
         public static Texture2D ShadesPickup;
 
@@ -32,10 +32,10 @@ namespace PartyBall
             StartMenu = content.Load<Texture2D>("texture\\StartScreen");
             GameOverScreen = content.Load<Texture2D>("Graphics\\endMenu");
             Font = content.Load<SpriteFont>("Graphics\\gameFont");
-            Ball = content.Load<Texture2D>("texture\\characterball");
+            Ball = content.Load<Texture2D>("texture\\characterSpriteSheet");
             Wall_Left = content.Load<Texture2D>("texture\\wall_left");
             Wall_Right = content.Load<Texture2D>("texture\\wall_right");
-            Pipe = content.Load<Texture2D>("texture\\pipesegment");
+            Reg_Platform = content.Load<Texture2D>("texture\\pipesegment");
             ShadesPickup = content.Load<Texture2D>("texture\\shadesPickup");
             BgScreen = content.Load<Texture2D>("texture\\bgscreen");
         }

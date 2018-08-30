@@ -5,7 +5,7 @@ namespace PartyBall.Scripts.Entities
 {
     public enum PlatformType
     {
-        Pipe,
+        Regular,
         Wall
     }
 

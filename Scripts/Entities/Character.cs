@@ -18,6 +18,11 @@ namespace PartyBall.Scripts.Entities
 
         public Platform CurPlatform { get; private set; }
 
+        public Point currentFrame = new Point(0, 0);
+        public Point frameSize = new Point(64, 64);
+        public Vector2 characterPosition;
+
+
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
         }
@@ -103,13 +108,13 @@ namespace PartyBall.Scripts.Entities
                 }
             }
 
-            if (this.CurPlatform == null)          
+            if (this.CurPlatform == null)
             {
                 this.TranslateMoveState(MoveType.Fall);
                 return;
             }
 
-            if (this.CurPlatform.Type == PlatformType.Pipe && this.CurrentMoveState.Type != MoveType.Roll)
+            if (this.CurPlatform.Type == PlatformType.Regular && this.CurrentMoveState.Type != MoveType.Roll)
             {
                 this.TranslateMoveState(MoveType.Roll);
             }
@@ -127,8 +132,20 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
 
+            if (this.CurrentMoveState.CanControl)
+            {
+                for (int i = 0; i<30; i++)
+                {
+                    
+                }
+            }
+
             if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {
+                if (currentFrame.Y >= 0)
+                {
+                    currentFrame.Y = 0;
+                }
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
             }
 
@@ -139,11 +156,19 @@ namespace PartyBall.Scripts.Entities
 
             if (this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
             {
+                currentFrame.Y = 4;
+                currentFrame.X++;
+                if (currentFrame.X >= 3)
+                    currentFrame.X = 0;
                 this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
             }
 
             if (this.CurrentMoveState.CanMoveRight && (state.IsKeyDown(Keys.D) || state.IsKeyDown(Keys.Right)))
             {
+                currentFrame.Y = 3;
+                currentFrame.X++;
+                if (currentFrame.X >= 3)
+                    currentFrame.X = 0;
                 this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
 

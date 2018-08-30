@@ -62,7 +62,7 @@ namespace PartyBall.Scripts.Render
 
             this.RectBackground = new Rectangle(0, 0, this.Graphics.PreferredBackBufferWidth, this.Graphics.PreferredBackBufferHeight);
 
-            
+
             this.SpriteBatch = new SpriteBatch(gameInstance.GraphicsDevice);
 
             // Somewhere in your LoadContent() method:
@@ -90,6 +90,18 @@ namespace PartyBall.Scripts.Render
 
             //Draw the boundingbox outline - debug function
             //this.DrawBorder(gameObject.BoundingBox, 1, Color.Purple);
+            this.SpriteBatch.End();
+        }
+
+        public void DrawCharacter(Character character, Point frameSize, Point currentFrame)
+        {
+            this.SpriteBatch.Begin();
+            this.SpriteBatch.Draw(character.Texture, character.Position, new Rectangle(
+                                     frameSize.X * currentFrame.X,
+                                     frameSize.Y * currentFrame.Y,
+                                     frameSize.X,
+                                     frameSize.Y),
+                                     Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
             this.SpriteBatch.End();
         }
 
