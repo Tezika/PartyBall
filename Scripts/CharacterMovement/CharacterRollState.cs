@@ -37,8 +37,9 @@ namespace PartyBall.Scripts.CharacterMovement
         public override void OnEnter()
         {
             Debugger.Instance.Log("The player is rolling now");
-            this.Character.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
+            this.Character.Velocity = new Vector2(this.Character.Velocity.X, -CharacterMoveAbilities.RollFowardSpeed);
             this.Character.Scale = 1;
+            this.Character.HorAcceleraltion = CharacterMoveAbilities.RollHorAcceleration;
         }
 
         public override void OnExit()

@@ -10,14 +10,15 @@ namespace PartyBall.Scripts.Entities
 {
     public class Character : GameObject
     {
-        public float CurrentSpeed { get; internal set; }
-
         public CharacterMoveState CurrentMoveState { get; private set; }
 
         public CharacterMoveState[] MoveStates { get; private set; }
 
         public Platform CurPlatform { get; private set; }
-        
+
+        public Vector2 Velocity { get; internal set; }
+
+        public float HorAcceleraltion { get; internal set; }
 
         // Holds which positon of the spriteSheet we are. This means that we are in
         // the first frame of our spriteSheet in our first line of the spriteSheet
@@ -32,11 +33,8 @@ namespace PartyBall.Scripts.Entities
         //Animation timer
         private int _TimeSinceLastFrame = 0;
 
-        //Update the animation per 50 millseconds
+        //Update the animation per 100 millseconds
         private int _MillisecondsPerFrame = 100;
-
-        private bool _UpdateAnimation = false;
-
 
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
@@ -46,31 +44,23 @@ namespace PartyBall.Scripts.Entities
         {
             this.InitMoveStates();
             this.CurPlatform = null;
-            _UpdateAnimation = false;
+            this.HorAcceleraltion = CharacterMoveAbilities.RollHorAcceleration;
         }
 
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
-            //determine whether need to update animation or not
-            _TimeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (_TimeSinceLastFrame > _MillisecondsPerFrame)
-            {
-                _TimeSinceLastFrame -= _MillisecondsPerFrame;
-                _UpdateAnimation = true;
-            }
-            else
-            {
-                _UpdateAnimation = false;
-            }
-
+            this.UpdateVelocity(Keyboard.GetState());
+            this.UpdateAnimation(gameTime);
             this.UpdatePlatform();
-            this.UpdatePosition(Keyboard.GetState());
+            this.UpdatePosition();
             this.UpdatePickups();
+
             if (this.CurrentMoveState != null)
             {
                 this.CurrentMoveState.Update(gameTime);
             }
+
             base.Update(gameTime);
         }
 
@@ -97,7 +87,7 @@ namespace PartyBall.Scripts.Entities
         public void Spawn()
         {
             Debugger.Instance.Log("The character has already respawned");
-            this.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
+            this.Velocity = new Vector2(0, CharacterMoveAbilities.RollFowardSpeed); 
             this.Scale = 1;
             //Reset the player's position
             this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
@@ -152,58 +142,27 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
-
-        private void UpdatePosition(KeyboardState state)
+        private void UpdateVelocity(KeyboardState state)
         {
             if (!this.CurrentMoveState.CanControl)
             {
                 return;
             }
-
-            if (_UpdateAnimation)
+            var velocityX = this.Velocity.X;
+            //Horizontal Input
+            if(this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
             {
-                currentFrame.X++;
-                if (currentFrame.X >= 3)
-                    currentFrame.X = 0;
-            }
-
-
-            if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
-            {
-                if (_UpdateAnimation)
-                {
-                    if (currentFrame.Y >= 0)
-                    {
-                        currentFrame.Y = 0;
-                    }
-                }
-                this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
-            }
-
-            if (this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
-            {
-                if (_UpdateAnimation)
-                {
-                    currentFrame.Y = 4;
-                    currentFrame.X++;
-                    if (currentFrame.X >= 3)
-                        currentFrame.X = 0;
-                }
-
-                this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
+                velocityX -= this.HorAcceleraltion;
             }
 
             if (this.CurrentMoveState.CanMoveRight && (state.IsKeyDown(Keys.D) || state.IsKeyDown(Keys.Right)))
             {
-                if (_UpdateAnimation)
-                {
-                    currentFrame.Y = 3;
-                    currentFrame.X++;
-                    if (currentFrame.X >= 3)
-                        currentFrame.X = 0;
-                }
-                this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
+                velocityX += this.HorAcceleraltion;
             }
+
+            velocityX = MathHelper.Clamp(velocityX, -CharacterMoveAbilities.MaxHorizontalSpeed, CharacterMoveAbilities.MaxHorizontalSpeed);
+
+            this.Velocity = new Vector2(velocityX, this.Velocity.Y);
 
             //Jump
             if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
@@ -211,6 +170,42 @@ namespace PartyBall.Scripts.Entities
                 this.TranslateMoveState(MoveType.Jump);
                 this.CurPlatform = null;
             }
+        }
+
+        private void UpdateAnimation(GameTime gameTime)
+        {
+            //determine whether need to update animation or not
+            _TimeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (_TimeSinceLastFrame > _MillisecondsPerFrame)
+            {
+                _TimeSinceLastFrame -= _MillisecondsPerFrame;
+                if (Velocity.Y != 0)
+                {
+                    //Update the vertical speed
+                    currentFrame.X++;
+                    if (currentFrame.X >= 3)
+                        currentFrame.X = 0;
+                }
+
+                if (Velocity.X < 0)
+                {
+                    currentFrame.Y = 4;
+                }
+                else if (Velocity.X > 0)
+                {
+                    currentFrame.Y = 3;
+                }
+                else
+                {
+                    currentFrame.Y = 0;
+                }
+            }
+        }
+
+
+        private void UpdatePosition()
+        {
+            this.Position = new Vector2(this.Position.X + this.Velocity.X, this.Position.Y + this.Velocity.Y);
         }
 
         private void InitMoveStates()

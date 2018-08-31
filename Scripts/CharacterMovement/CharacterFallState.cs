@@ -43,6 +43,7 @@ namespace PartyBall.Scripts.CharacterMovement
             Debugger.Instance.Log("The player is falling now");
             _Timer = 0.0f;
             _initScale = this.Character.Scale;
+            this.Character.Velocity = Vector2.Zero;
         }
 
         public override void OnExit()

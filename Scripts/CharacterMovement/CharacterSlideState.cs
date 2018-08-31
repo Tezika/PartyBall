@@ -60,7 +60,7 @@ namespace PartyBall.Scripts.CharacterMovement
             _InitScale = this.Character.Scale;
             this.Character.Scale = 1.0f;
 
-            this.Character.CurrentSpeed = CharacterMoveAbilities.WallMoveSpeed;
+            this.Character.Velocity = new Vector2(this.Character.Velocity.X, -CharacterMoveAbilities.RollFowardSpeed);
             _CurWall = this.Character.CurPlatform as Wall;
             if (_CurWall.Side == WallSide.Left)
             {
@@ -82,7 +82,7 @@ namespace PartyBall.Scripts.CharacterMovement
         {
             this.CanMoveLeft = true;
             this.CanMoveRight = true;
-            this.Character.CurrentSpeed = CharacterMoveAbilities.RollSpeed;
+            this.Character.Velocity = new Vector2(0, -CharacterMoveAbilities.RollFowardSpeed);
             _CurWall = null;
         }
 

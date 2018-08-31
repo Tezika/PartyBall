@@ -63,9 +63,7 @@ namespace PartyBall.Scripts.CharacterMovement
     }
 
     public static class CharacterMoveAbilities
-    {
-        public const float RollSpeed = 5.0f;
-
+    {  
         //Jump
         public const float HoverSpeed = 3.0f;
 
@@ -86,5 +84,17 @@ namespace PartyBall.Scripts.CharacterMovement
         public const float WallMoveSpeed = 1.0f;
 
         public const float SlideEdgeScale = 0.3f;
+
+        public const float InitAccerleratedTime = 2.0f;
+
+        // Movement
+        public const float RollHorAcceleration = 0.1f;
+
+        public const float JumpHorAcceleration = 0.1f;
+
+        public const float MaxHorizontalSpeed = 2.0f;
+
+        public const float RollFowardSpeed = 4.0f;
+
     }
 }
