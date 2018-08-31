@@ -64,14 +64,14 @@ namespace PartyBall.Scripts.CharacterMovement
 
     public static class CharacterMoveAbilities
     {
-        public const float RollSpeed = 3.0f;
+        public const float RollSpeed = 15.0f;
 
         //Jump
-        public const float HoverSpeed = 1.5f;
+        public const float HoverSpeed = 15f;
 
-        public const float JumpTime = 1.5f;
+        public const float JumpTime = .5f;
 
-        public const float HoverTime = 0.4f;
+        public const float HoverTime = 0.5f;
 
         public const float HoverScale =1.5f;
 
