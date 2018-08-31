@@ -86,3 +86,4 @@ C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.pdb
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
+/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache

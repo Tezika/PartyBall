@@ -180,11 +180,6 @@ namespace PartyBall.Scripts.Entities
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
             }
 
-            if (state.IsKeyDown(Keys.Down) || state.IsKeyDown(Keys.S))
-            {
-                this.Position = new Vector2(this.Position.X, this.Position.Y + this.CurrentSpeed);
-            }
-
             if (this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
             {
                 if (_UpdateAnimation)
