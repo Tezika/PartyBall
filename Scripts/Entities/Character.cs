@@ -50,10 +50,11 @@ namespace PartyBall.Scripts.Entities
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
-            this.UpdateVelocity(Keyboard.GetState());
+            //The update order matters
             this.UpdateAnimation(gameTime);
-            this.UpdatePlatform();
             this.UpdatePosition();
+            this.UpdatePlatform();
+            this.UpdateVelocity(Keyboard.GetState());
             this.UpdatePickups();
 
             if (this.CurrentMoveState != null)
@@ -148,6 +149,15 @@ namespace PartyBall.Scripts.Entities
             {
                 return;
             }
+
+            
+            //Jump
+            if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
+            {
+                this.TranslateMoveState(MoveType.Jump);
+                this.CurPlatform = null;
+            }
+
             var velocityX = this.Velocity.X;
             //Horizontal Input
             if(this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
@@ -160,16 +170,10 @@ namespace PartyBall.Scripts.Entities
                 velocityX += this.HorAcceleraltion;
             }
 
-            velocityX = MathHelper.Clamp(velocityX, -CharacterMoveAbilities.MaxHorizontalSpeed, CharacterMoveAbilities.MaxHorizontalSpeed);
+            velocityX = MathHelper.Clamp(velocityX, -CharacterMoveAbilities.MaxiumHorizontalSpeed, CharacterMoveAbilities.MaxiumHorizontalSpeed);
 
             this.Velocity = new Vector2(velocityX, this.Velocity.Y);
 
-            //Jump
-            if (this.CurrentMoveState.CanJump && state.IsKeyDown(Keys.Space))
-            {
-                this.TranslateMoveState(MoveType.Jump);
-                this.CurPlatform = null;
-            }
         }
 
         private void UpdateAnimation(GameTime gameTime)

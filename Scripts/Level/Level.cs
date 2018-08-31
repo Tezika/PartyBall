@@ -104,12 +104,21 @@ namespace PartyBall.Scripts.Level
             var pipe_4 = new Pipe (new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                (float)(graphicsDevice.Viewport.Height - 3.5 * layoutHeight)));
 
+            var pipe_5 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 4.5 * layoutHeight)));
+
+            var pipe_6 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 5.5 * layoutHeight)));
+
+            var pipe_7 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 6.5 * layoutHeight)));
 
 
-            var pipe_5 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
-            var pipe_6 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
 
-            var pipe_7 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
+            //var pipe_5 = new PipeSegment();
+            //var pipe_6 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
+
+            //var pipe_7 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
 
             var pipe_8 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
             var pipe_9 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
@@ -131,14 +140,14 @@ namespace PartyBall.Scripts.Level
             //pipe_4.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                        //(float)(graphicsDevice.Viewport.Height - 3.9 * layoutHeight));
 
-            pipe_5.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                        (float)(graphicsDevice.Viewport.Height - 5.5 * layoutHeight));
+            //pipe_5.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+            //                                            (float)(graphicsDevice.Viewport.Height - 5.5 * layoutHeight));
 
-            pipe_6.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       (float)(graphicsDevice.Viewport.Height - 6.5 * layoutHeight));
+            //pipe_6.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+            //                                           (float)(graphicsDevice.Viewport.Height - 6.5 * layoutHeight));
 
-            pipe_7.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                      (float)(graphicsDevice.Viewport.Height - 8.1 * layoutHeight));
+            //pipe_7.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                                      //(float)(graphicsDevice.Viewport.Height - 8.1 * layoutHeight));
 
             pipe_8.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                   (float)(graphicsDevice.Viewport.Height - 9.7 * layoutHeight));
@@ -157,9 +166,7 @@ namespace PartyBall.Scripts.Level
             pipe_12.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                            (float)(graphicsDevice.Viewport.Height - 18 * layoutHeight));
 
-            this.Platforms.Add(pipe_5);
-            this.Platforms.Add(pipe_6);
-            this.Platforms.Add(pipe_7);
+
             this.Platforms.Add(pipe_8);
             this.Platforms.Add(pipe_9);
             this.Platforms.Add(pipe_10);

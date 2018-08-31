@@ -23,9 +23,25 @@ namespace PartyBall.Scripts.Entities
 
         public SegmentType SegmentType { get; internal set; }
 
-        public PipeSegment(Texture2D texture, Vector2 position, float scale = 1.0f) : base(texture, position, scale)
+        public int SegmentHeight
         {
-            this.SegmentType = SegmentType.None;
+            get
+            {
+                if (this.SegmentType == SegmentType.Middle || this.SegmentType == SegmentType.None)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return (this.BoundingBox.Right - this.BoundingBox.Left);
+                }
+            }
+        }
+
+
+        public PipeSegment(Texture2D texture, Vector2 position, float scale = 1.0f, SegmentType type = SegmentType.None) : base(texture, position, scale)
+        {
+            this.SegmentType = type;
         }
 
         public override void Draw(GameTime gameTime)

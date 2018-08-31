@@ -13,9 +13,9 @@ namespace PartyBall.Scripts.Entities.Platforms
         public Pipe(Vector2 position): base(position)
         {
        
-            this.LeftSegment = new PipeSegment(Graphics.PipeSegment_Left, Vector2.Zero, 0.15f);
-            this.MiddleSegment = new PipeSegment(Graphics.PipeSegment_Middle, Vector2.Zero, 0.15f);
-            this.RightSegment = new PipeSegment(Graphics.PipeSegement_Right, Vector2.Zero, 0.15f);
+            this.LeftSegment = new PipeSegment(Graphics.PipeSegment_Left, Vector2.Zero, 0.15f, SegmentType.Left);
+            this.MiddleSegment = new PipeSegment(Graphics.PipeSegment_Middle, Vector2.Zero, 0.15f, SegmentType.Middle);
+            this.RightSegment = new PipeSegment(Graphics.PipeSegement_Right, Vector2.Zero, 0.15f, SegmentType.Right);
 
             this.MiddleSegment.Position = position;
             this.LeftSegment.Position = new Vector2(position.X - (this.MiddleSegment.Width * this.MiddleSegment.Scale), position.Y);

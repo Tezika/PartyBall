@@ -42,7 +42,6 @@ namespace PartyBall.Scripts.CharacterMovement
         {
             _Timer = 0.0f;
             _InitScale = this.Character.Scale;
-            this.Character.Velocity = new Vector2(this.Character.Velocity.X, -CharacterMoveAbilities.HoverSpeed);
             this.Character.HorAcceleraltion = CharacterMoveAbilities.JumpHorAcceleration;
         }
 

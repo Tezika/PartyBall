@@ -53,6 +53,9 @@ C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.pdb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/bgscreen.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterBall.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterSpriteSheet.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_left.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_middle.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_right.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipesegment.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
 /Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/shadesPickup.xnb
@@ -86,7 +89,3 @@ C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.pdb
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
-/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_left.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_middle.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_right.xnb
