@@ -18,8 +18,13 @@ namespace PartyBall.Scripts.Entities
 
         public Platform CurPlatform { get; private set; }
 
+        // Holds which positon of the spriteSheet we are. This means that we are in
+        // the first frame of our spriteSheet in our first line of the spriteSheet
         public Point currentFrame = new Point(0, 0);
+        // The first int holds the width and the second holds the height, of the single frame we want to see every time
         public Point frameSize = new Point(64, 64);
+        // Holds how many frames are on the line and how many lines of frames we have
+        public Point sheetSize = new Point(3, 4);
         public Vector2 actualCharacterDimensions = new Vector2(64, 64);
         public Vector2 actualCharacterOrigin = new Vector2(64 / 2, 64 / 2);
 
@@ -132,6 +137,9 @@ namespace PartyBall.Scripts.Entities
             {
                 return;
             }
+            currentFrame.X++;
+            if (currentFrame.X >= 3)
+                currentFrame.X = 0;
 
             if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {

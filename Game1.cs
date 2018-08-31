@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Media;
 using PartyBall.Scripts.Level;
 using PartyBall.Scripts.Render;
 using PartyBall.Scripts.Singleton;
+using System;
 
 namespace PartyBall
 {
@@ -19,6 +20,8 @@ namespace PartyBall
         GameStates GameState;
         MenuOptions menuCursor;
         Rectangle rectBackground;
+        // Used to adjust the animation frame speed so it's not too fast or too slow
+        TimeSpan nextFrameInterval = TimeSpan.FromSeconds((float)1 / 16);
 
         public static Game1 Instance = null;
 
@@ -26,6 +29,7 @@ namespace PartyBall
 
         public Game1()
         {
+            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 100);
             RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
             this.CurLevel = new Level();
