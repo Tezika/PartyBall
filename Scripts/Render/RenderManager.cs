@@ -90,6 +90,7 @@ namespace PartyBall.Scripts.Render
 
             //Draw the boundingbox outline - debug function
             //this.DrawBorder(gameObject.BoundingBox, 1, Color.Purple);
+
             this.SpriteBatch.End();
         }
 
