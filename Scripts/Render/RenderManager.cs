@@ -102,7 +102,7 @@ namespace PartyBall.Scripts.Render
                                      character.frameSize.Y * character.currentFrame.Y,
                                      character.frameSize.X,
                                      character.frameSize.Y),
-                                     Color.White, 0.0f, character.actualCharacterOrigin, 1.0f, SpriteEffects.None, 1.0f);
+                                  Color.White, 0.0f, character.actualCharacterOrigin, character.Scale, SpriteEffects.None, 1.0f);
             //Draw the boundingbox outline - debug function
             //this.DrawBorder(character.BoundingBox, 5, Color.Purple);
             this.SpriteBatch.End();
