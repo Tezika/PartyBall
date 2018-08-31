@@ -17,6 +17,7 @@ namespace PartyBall.Scripts.Entities
         public CharacterMoveState[] MoveStates { get; private set; }
 
         public Platform CurPlatform { get; private set; }
+        
 
         // Holds which positon of the spriteSheet we are. This means that we are in
         // the first frame of our spriteSheet in our first line of the spriteSheet
@@ -28,6 +29,14 @@ namespace PartyBall.Scripts.Entities
         public Vector2 actualCharacterDimensions = new Vector2(64, 64);
         public Vector2 actualCharacterOrigin = new Vector2(64 / 2, 64 / 2);
 
+        //Animation timer
+        private int _TimeSinceLastFrame = 0;
+
+        //Update the animation per 50 millseconds
+        private int _MillisecondsPerFrame = 100;
+
+        private bool _UpdateAnimation = false;
+
 
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
         {
@@ -37,11 +46,24 @@ namespace PartyBall.Scripts.Entities
         {
             this.InitMoveStates();
             this.CurPlatform = null;
+            _UpdateAnimation = false;
         }
 
         //update the player's logic
         public override void Update(GameTime gameTime)
         {
+            //determine whether need to update animation or not
+            _TimeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (_TimeSinceLastFrame > _MillisecondsPerFrame)
+            {
+                _TimeSinceLastFrame -= _MillisecondsPerFrame;
+                _UpdateAnimation = true;
+            }
+            else
+            {
+                _UpdateAnimation = false;
+            }
+
             this.UpdatePlatform();
             this.UpdatePosition(Keyboard.GetState());
             this.UpdatePickups();
@@ -137,15 +159,23 @@ namespace PartyBall.Scripts.Entities
             {
                 return;
             }
-            currentFrame.X++;
-            if (currentFrame.X >= 3)
-                currentFrame.X = 0;
+
+            if (_UpdateAnimation)
+            {
+                currentFrame.X++;
+                if (currentFrame.X >= 3)
+                    currentFrame.X = 0;
+            }
+
 
             if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {
-                if (currentFrame.Y >= 0)
+                if (_UpdateAnimation)
                 {
-                    currentFrame.Y = 0;
+                    if (currentFrame.Y >= 0)
+                    {
+                        currentFrame.Y = 0;
+                    }
                 }
                 this.Position = new Vector2(this.Position.X, this.Position.Y - this.CurrentSpeed);
             }
@@ -157,19 +187,26 @@ namespace PartyBall.Scripts.Entities
 
             if (this.CurrentMoveState.CanMoveLeft && (state.IsKeyDown(Keys.A) || state.IsKeyDown(Keys.Left)))
             {
-                currentFrame.Y = 4;
-                currentFrame.X++;
-                if (currentFrame.X >= 3)
-                    currentFrame.X = 0;
+                if (_UpdateAnimation)
+                {
+                    currentFrame.Y = 4;
+                    currentFrame.X++;
+                    if (currentFrame.X >= 3)
+                        currentFrame.X = 0;
+                }
+
                 this.Position = new Vector2(this.Position.X - this.CurrentSpeed, this.Position.Y);
             }
 
             if (this.CurrentMoveState.CanMoveRight && (state.IsKeyDown(Keys.D) || state.IsKeyDown(Keys.Right)))
             {
-                currentFrame.Y = 3;
-                currentFrame.X++;
-                if (currentFrame.X >= 3)
-                    currentFrame.X = 0;
+                if (_UpdateAnimation)
+                {
+                    currentFrame.Y = 3;
+                    currentFrame.X++;
+                    if (currentFrame.X >= 3)
+                        currentFrame.X = 0;
+                }
                 this.Position = new Vector2(this.Position.X + this.CurrentSpeed, this.Position.Y);
             }
 

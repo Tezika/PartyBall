@@ -29,7 +29,6 @@ namespace PartyBall
 
         public Game1()
         {
-            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 100);
             RenderManager.Instance.Graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
             this.CurLevel = new Level();

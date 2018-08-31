@@ -13,7 +13,8 @@ namespace PartyBall.Scripts.Render
         {
             this.Transform = new Matrix();
         }
- public void Update(GameTime gameTime, Character character)
+
+        public void Update(GameTime gameTime, Character character)
         {
             this.Centre = new Vector2(0, character.Position.Y + character.actualCharacterDimensions.X / 2 - RenderManager.Instance.ScreenHeight * 0.8f);
             this.Transform = Matrix.CreateScale(new Vector3(1, 1, 0)) 
