@@ -61,7 +61,7 @@ namespace PartyBall.Scripts.CharacterMovement
             {
                 _Timer = 0.0f;
                 //The player should die now
-                this.Character.Respawn();
+                this.Character.Spawn();
             }
         }
     }
