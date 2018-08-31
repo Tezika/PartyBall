@@ -5,7 +5,7 @@ namespace PartyBall.Scripts.Entities.Pickups
 {
     public class Pickup: GameObject
     {
-        public Pickup(Texture2D texture, Vector2 position): base(texture, position)
+        public Pickup(Texture2D texture, Vector2 position): base(position, texture)
         {
 
         }

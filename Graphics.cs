@@ -23,6 +23,12 @@ namespace PartyBall
 
         public static Texture2D BgScreen;
 
+        public static Texture2D PipeSegment_Left;
+
+        public static Texture2D PipeSegment_Middle;
+
+        public static Texture2D PipeSegement_Right;
+
         public static void load(ContentManager content)
         {
             //Modify by Tezika
@@ -35,6 +41,10 @@ namespace PartyBall
             Pipe = content.Load<Texture2D>("texture\\pipesegment");
             ShadesPickup = content.Load<Texture2D>("texture\\shadesPickup");
             BgScreen = content.Load<Texture2D>("texture\\bgscreen");
+
+            PipeSegment_Left = content.Load<Texture2D>("texture\\pipe_left");
+            PipeSegment_Middle = content.Load<Texture2D>("texture\\pipe_middle");
+            PipeSegement_Right = content.Load<Texture2D>("texture\\pipe_right");
         }
     }
 }

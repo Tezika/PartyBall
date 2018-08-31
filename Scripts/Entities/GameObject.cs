@@ -67,10 +67,10 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
-        public GameObject(Texture2D texture, Vector2 position)
+        public GameObject(Vector2? position, Texture2D texture = null)
         {
             this.Texture = texture;
-            this.Position = position;
+            this.Position = (Vector2)position;
             this.Visible = true;
             this.Enabled = true;
             this.Scale = 1.0f;

@@ -36,7 +36,7 @@ namespace PartyBall.Scripts.Entities
         //Update the animation per 100 millseconds
         private int _MillisecondsPerFrame = 100;
 
-        public Character(Texture2D texture, Vector2 position) : base(texture, position)
+        public Character(Texture2D texture, Vector2 position) : base(position, texture)
         {
         }
 
@@ -132,7 +132,7 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
 
-            if (this.CurPlatform.Type == PlatformType.Pipe && this.CurrentMoveState.Type != MoveType.Roll)
+            if (this.CurPlatform.Type == PlatformType.PipeSegment && this.CurrentMoveState.Type != MoveType.Roll)
             {
                 this.TranslateMoveState(MoveType.Roll);
             }
@@ -187,11 +187,13 @@ namespace PartyBall.Scripts.Entities
                         currentFrame.X = 0;
                 }
 
-                if (Velocity.X < 0)
+                var deadZone = 0.4f;
+
+                if (Velocity.X < -deadZone)
                 {
                     currentFrame.Y = 4;
                 }
-                else if (Velocity.X > 0)
+                else if (Velocity.X > deadZone)
                 {
                     currentFrame.Y = 3;
                 }

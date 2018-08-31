@@ -87,3 +87,6 @@ C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.pdb
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
 /Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_left.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_middle.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_right.xnb

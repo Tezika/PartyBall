@@ -55,7 +55,7 @@
     <Compile Include="Scripts\CharacterMovement\CharacterRollState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterFallState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterSlideState.cs" />
-    <Compile Include="Scripts\Entities\Platforms\Pipe.cs" />
+    <Compile Include="Scripts\Entities\Platforms\PipeSegment.cs" />
     <Compile Include="Scripts\Level\Level.cs" />
     <Compile Include="Scripts\Singleton\Debugger.cs" />
     <Compile Include="Scripts\Render\RenderManager.cs" />
@@ -65,6 +65,7 @@
     <Compile Include="Scripts\Entities\Pickups\Pickup.cs" />
     <Compile Include="Scripts\Entities\Pickups\TestPickUp.cs" />
     <Compile Include="Sound.cs" />
+    <Compile Include="Scripts\Entities\Platforms\Pipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
