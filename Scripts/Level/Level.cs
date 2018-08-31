@@ -4,7 +4,6 @@ using PartyBall.Scripts.Entities;
 using PartyBall.Scripts.Entities.Pickups;
 using PartyBall.Scripts.Render;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 
 namespace PartyBall.Scripts.Level
 {
@@ -36,27 +35,20 @@ namespace PartyBall.Scripts.Level
 
         public void LoadContent(Game game)
         {
-            var content = game.Content;
             var graphicsDevice = game.GraphicsDevice;
 
             //Load the content
             //Test level layout only by hard coding
+            var layoutHeight = (float)(Graphics.Pipe.Height * 0.4);
             this.Character = new Character(Graphics.Ball, Vector2.Zero);
-            var platformScale = 0.4f;
-            var wallScale = 0.25f;
-            var regPlatform_1 = new RegularPlatform(Graphics.Reg_Platform, Vector2.Zero, platformScale);
-            var regPlatform_2 = new RegularPlatform(Graphics.Reg_Platform, Vector2.Zero, platformScale);
-            var wall_1 = new Wall(Graphics.Wall_Left, Vector2.Zero, WallSide.Left, wallScale);
-            var wall_2 = new Wall(Graphics.Wall_Right, Vector2.Zero, WallSide.Right, wallScale);
-            var wall_3 = new Wall(Graphics.Wall_Left, Vector2.Zero, WallSide.Left, wallScale);
-            var wall_4 = new Wall(Graphics.Wall_Right, Vector2.Zero, WallSide.Right, wallScale);
-            var testPickup = new TestPickUp(Graphics.ShadesPickup, Vector2.Zero);
 
-            var layoutHeight = regPlatform_1.Height * regPlatform_2.Scale;
+            this.LayoutPipes(graphicsDevice, 0.4f, layoutHeight);
+            this.LayoutWalls(graphicsDevice, 0.25f, layoutHeight);
+            this.LayoutPickup(graphicsDevice, 1.0f, layoutHeight);
 
             this.GameObjects.Add(this.Character);
-            this.GameObjects.AddRange(this.Platforms);
             this.GameObjects.AddRange(this.Pickups);
+            this.GameObjects.AddRange(this.Platforms);
         }
 
         public void UnloadContent()

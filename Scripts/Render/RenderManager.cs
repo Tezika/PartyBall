@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PartyBall.Scripts.Entities;
@@ -89,7 +89,7 @@ namespace PartyBall.Scripts.Render
                                   );
 
             //Draw the boundingbox outline - debug function
-            this.DrawBorder(gameObject.BoundingBox, 1, Color.Purple);
+            //this.DrawBorder(gameObject.BoundingBox, 1, Color.Purple);
             this.SpriteBatch.End();
         }
 

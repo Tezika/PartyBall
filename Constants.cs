@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PartyBall
+﻿namespace PartyBall
 {
     public static class Constants
     {
