@@ -4,6 +4,7 @@ using PartyBall.Scripts.Entities;
 using PartyBall.Scripts.Entities.Pickups;
 using PartyBall.Scripts.Render;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace PartyBall.Scripts.Level
 {
@@ -118,7 +119,7 @@ namespace PartyBall.Scripts.Level
             }
 
             //The last for the character
-            RenderManager.Instance.DrawCharacter(this.Character, this.Character.frameSize, this.Character.currentFrame);
+            RenderManager.Instance.DrawCharacter(this.Character);
         }
 
         public void Update(GameTime gameTime)

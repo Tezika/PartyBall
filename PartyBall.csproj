@@ -56,7 +56,6 @@
     <Compile Include="Scripts\CharacterMovement\CharacterFallState.cs" />
     <Compile Include="Scripts\CharacterMovement\CharacterSlideState.cs" />
     <Compile Include="Scripts\Level\Level.cs" />
-    <Compile Include="Scripts\Render\Animation.cs" />
     <Compile Include="Scripts\Singleton\Debugger.cs" />
     <Compile Include="Scripts\Render\RenderManager.cs" />
     <Compile Include="Scripts\Render\Camera.cs" />

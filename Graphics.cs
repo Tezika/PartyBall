@@ -32,6 +32,7 @@ namespace PartyBall
             StartMenu = content.Load<Texture2D>("texture\\StartScreen");
             GameOverScreen = content.Load<Texture2D>("Graphics\\endMenu");
             Font = content.Load<SpriteFont>("Graphics\\gameFont");
+            //Ball = content.Load<Texture2D>("texture\\characterBall");
             Ball = content.Load<Texture2D>("texture\\characterSpriteSheet");
             Wall_Left = content.Load<Texture2D>("texture\\wall_left");
             Wall_Right = content.Load<Texture2D>("texture\\wall_right");

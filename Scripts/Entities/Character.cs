@@ -20,7 +20,8 @@ namespace PartyBall.Scripts.Entities
 
         public Point currentFrame = new Point(0, 0);
         public Point frameSize = new Point(64, 64);
-        public Vector2 characterPosition;
+        public Vector2 actualCharacterDimensions = new Vector2(64, 64);
+        public Vector2 actualCharacterOrigin = new Vector2(64 / 2, 64 / 2);
 
 
         public Character(Texture2D texture, Vector2 position) : base(texture, position)
@@ -73,7 +74,7 @@ namespace PartyBall.Scripts.Entities
             this.Scale = 1;
             //Reset the player's position
             this.Position = new Vector2((float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Width * 0.5),
-                         (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.Height / 2));
+                         (float)(RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - this.actualCharacterDimensions.Y / 2));
             this.TranslateMoveState(MoveType.Roll);
         }
 
@@ -132,14 +133,6 @@ namespace PartyBall.Scripts.Entities
                 return;
             }
 
-            if (this.CurrentMoveState.CanControl)
-            {
-                for (int i = 0; i<30; i++)
-                {
-                    
-                }
-            }
-
             if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {
                 if (currentFrame.Y >= 0)
@@ -192,6 +185,17 @@ namespace PartyBall.Scripts.Entities
             this.MoveStates[(int)MoveType.Jump] = new CharacterJumpState(this);
             this.MoveStates[(int)MoveType.Roll] = new CharacterRollState(this);
             this.MoveStates[(int)MoveType.Slide] = new CharacterSlideState(this);
+        }
+
+        public override Rectangle BoundingBox
+        {
+            get
+            {
+                return new Rectangle((int)(this.Position.X - this.actualCharacterOrigin.X * this.Scale),
+                                     (int)(this.Position.Y - this.actualCharacterOrigin.Y * this.Scale),
+                                     (int)(this.actualCharacterDimensions.X * this.Scale),
+                                     (int)(this.actualCharacterDimensions.Y * this.Scale));
+            }
         }
     }
 }

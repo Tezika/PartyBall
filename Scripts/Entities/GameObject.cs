@@ -56,7 +56,7 @@ namespace PartyBall.Scripts.Entities
             }
         }
 
-        public Rectangle BoundingBox
+        virtual public Rectangle BoundingBox
         {
             get
             {

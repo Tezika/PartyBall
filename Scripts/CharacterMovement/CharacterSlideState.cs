@@ -64,13 +64,13 @@ namespace PartyBall.Scripts.CharacterMovement
             _CurWall = this.Character.CurPlatform as Wall;
             if (_CurWall.Side == WallSide.Left)
             {
-                var distance = Math.Abs(_CurWall.BoundingBox.Right + this.Character.Width / 2 - this.Character.Position.X);
+                var distance = Math.Abs(_CurWall.BoundingBox.Right + this.Character.actualCharacterDimensions.X / 2 - this.Character.Position.X);
                 _SlideDirection = SlideDirection.Right;
                 _SlideTime = distance / CharacterMoveAbilities.SlideSpeed;
             }
             else
             {
-                var distance = Math.Abs(this.Character.Position.X + this.Character.Width / 2 - _CurWall.BoundingBox.Left);
+                var distance = Math.Abs(this.Character.Position.X + this.Character.actualCharacterDimensions.X / 2 - _CurWall.BoundingBox.Left);
                 _SlideDirection = SlideDirection.Left;
                 _SlideTime = distance / CharacterMoveAbilities.SlideSpeed;
             }
@@ -98,11 +98,11 @@ namespace PartyBall.Scripts.CharacterMovement
                 this.Character.Scale = MathHelper.Lerp(_InitScale, CharacterMoveAbilities.SlideEdgeScale, amount * 5);
                 if (_SlideDirection == SlideDirection.Left)
                 {
-                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Left - this.Character.Width / 2 - 2.0f, amount);
+                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Left - this.Character.actualCharacterDimensions.X / 2 - 2.0f, amount);
                 }
                 else
                 {
-                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Right + this.Character.Width / 2 + 2.0f, amount);
+                    positionX = MathHelper.Lerp(this.Character.Position.X, _CurWall.BoundingBox.Right + this.Character.actualCharacterDimensions.X / 2 + 2.0f, amount);
                 }
                 this.Character.Position = new Vector2(positionX, this.Character.Position.Y);
             }

@@ -22,7 +22,6 @@ namespace PartyBall
         public static bool Down() { return _check(Keys.Down, Buttons.DPadDown); }
         public static bool Left() { return _check(Keys.Left, Buttons.DPadLeft); }
         public static bool Right() { return _check(Keys.Right, Buttons.DPadRight); }
-        public static bool Shoot() { return _check(Keys.Space, Buttons.A); }
         public static bool Start() { return _check(Keys.Enter, Buttons.Start); }
 
         public static float LeftAnalogX()

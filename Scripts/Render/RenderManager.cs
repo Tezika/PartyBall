@@ -82,8 +82,8 @@ namespace PartyBall.Scripts.Render
                                   sourceRectangle: null,
                                   color: Color.White,
                                   rotation: 0.0f,
-                                  scale: gameObject.Scale,
                                   origin: gameObject.Origin,
+                                  scale: gameObject.Scale,
                                   effects: SpriteEffects.None,
                                   layerDepth: layerDepth
                                   );
@@ -93,15 +93,18 @@ namespace PartyBall.Scripts.Render
             this.SpriteBatch.End();
         }
 
-        public void DrawCharacter(Character character, Point frameSize, Point currentFrame)
+        public void DrawCharacter(Character character)
         {
-            this.SpriteBatch.Begin();
+           
+            this.SpriteBatch.Begin(transformMatrix: Game1.Instance.CurLevel.Camera.Transform);
             this.SpriteBatch.Draw(character.Texture, character.Position, new Rectangle(
-                                     frameSize.X * currentFrame.X,
-                                     frameSize.Y * currentFrame.Y,
-                                     frameSize.X,
-                                     frameSize.Y),
-                                     Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+                                     character.frameSize.X * character.currentFrame.X,
+                                     character.frameSize.Y * character.currentFrame.Y,
+                                     character.frameSize.X,
+                                     character.frameSize.Y),
+                                     Color.White, 0.0f, character.actualCharacterOrigin, 1.0f, SpriteEffects.None, 1.0f);
+            //Draw the boundingbox outline - debug function
+            //this.DrawBorder(character.BoundingBox, 5, Color.Purple);
             this.SpriteBatch.End();
         }
 
