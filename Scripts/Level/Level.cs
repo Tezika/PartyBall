@@ -175,19 +175,19 @@ namespace PartyBall.Scripts.Level
             wall_1.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.2),
                                                (float)(graphicsDevice.Viewport.Height - 12 * layoutHeight));
 
-            wall_2.Position = new Vector2((float)(graphicsDevice.Viewport.Width),
+            wall_2.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.8),
                                              (float)(graphicsDevice.Viewport.Height - 12 * layoutHeight));
 
             wall_3.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.2),
                                              (float)(graphicsDevice.Viewport.Height - 14.5 * layoutHeight));
                                         
-            wall_4.Position = new Vector2((float)(graphicsDevice.Viewport.Width),
+            wall_4.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.8),
                                              (float)(graphicsDevice.Viewport.Height - 16.8 * layoutHeight));
 
             wall_5.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.2),
                                            (float)(graphicsDevice.Viewport.Height - 19.2 * layoutHeight));
 
-            wall_6.Position = new Vector2((float)(graphicsDevice.Viewport.Width),
+            wall_6.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.8),
                                          (float)(graphicsDevice.Viewport.Height - 19.9 * layoutHeight));
 
 

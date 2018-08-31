@@ -119,8 +119,5 @@ namespace PartyBall.Scripts.Render
                                             rectangleToDraw.Width,
                                             thicknessOfBorder), borderColor);
         }
-
-        private void DrawStartMenu()
-        { }
     }
 }
