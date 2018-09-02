@@ -14,6 +14,7 @@ namespace PartyBall
     /// </summary>
     public class Game1 : Game
     {
+        public static System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
         SpriteBatch spriteBatch;
         enum GameStates { Start, Playing }
         enum MenuOptions { Start = 30, Restart = 500, Quit = 190 }
@@ -168,6 +169,13 @@ namespace PartyBall
             }
             spriteBatch.End();
             Debugger.Instance.DrawDebugInfo();
+            if (GameState == GameStates.Playing)
+            {
+                stopWatch.Start();
+                var swString = stopWatch.Elapsed.ToString("mm\\:ss\\.ff");
+                RenderManager.Instance.DrawString(swString, Graphics.Font, new Vector2(0, (float)RenderManager.Instance.Graphics.GraphicsDevice.Viewport.Height - 600.0f));
+
+            }
             base.Draw(gameTime);
         }
         private void DrawStartMenu()

@@ -5,6 +5,7 @@ using PartyBall.Scripts.CharacterMovement;
 using PartyBall.Scripts.Render;
 using PartyBall.Scripts.Singleton;
 using System;
+using PartyBall;
 
 namespace PartyBall.Scripts.Entities
 {
@@ -87,6 +88,7 @@ namespace PartyBall.Scripts.Entities
 
         public void Spawn()
         {
+            Game1.stopWatch.Reset();
             Debugger.Instance.Log("The character has already respawned");
             this.Velocity = new Vector2(0, CharacterMoveAbilities.RollFowardSpeed); 
             this.Scale = 1;
