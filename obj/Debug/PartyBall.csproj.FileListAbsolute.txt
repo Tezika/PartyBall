@@ -1,50 +1,4 @@
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/explosion.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.ogg
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/laserFire.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.ogg
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/StartScreen.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/bgscreen.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterBall.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterSpriteSheet.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_left.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_middle.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_right.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipesegment.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/shadesPickup.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer1.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer2.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/endMenu.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/gameFont.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainMenu.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainbackground.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickup.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickupAnimation.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/startScreen.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/SpriteFont/debug.xnb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/PartyBall.exe
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/PartyBall.pdb
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
-/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.xml
-/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CoreCompileInputs.cache
-/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
-/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
-/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb
+<<<<<<< HEAD
 C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/explosion.xnb
 C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.ogg
 C:/Users/Admin/source/repos/EAE Projects/PartyBaller/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.xnb
@@ -92,4 +46,52 @@ C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.csproj.
 C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.exe
 C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.pdb
 C:/Users/Admin/source/repos/EAE Projects/PartyBaller/obj/Debug/PartyBall.csprojAssemblyReference.cache
-/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csprojAssemblyReference.cache
+=======
+>>>>>>> 2b86d37d1c0b8511eb1c959c59eb6f454e62aa5b
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/explosion.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.ogg
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/gameMusic.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/laserFire.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.ogg
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Sound/menuMusic.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/StartScreen.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/bgscreen.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterBall.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/characterSpriteSheet.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_left.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_middle.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipe_right.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/pipesegment.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/platform_reg.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/shadesPickup.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_left.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/texture/wall_right.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer1.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/bgLayer2.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/endMenu.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/gameFont.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainMenu.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/mainbackground.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickup.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/shadesPickupAnimation.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/Graphics/startScreen.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/Content/SpriteFont/debug.xnb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/PartyBall.exe
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/PartyBall.pdb
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
+/Users/Tezika/Desktop/PartyBall/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.xml
+/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CoreCompileInputs.cache
+/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.csproj.CopyComplete
+/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.exe
+/Users/Tezika/Desktop/PartyBall/obj/Debug/PartyBall.pdb

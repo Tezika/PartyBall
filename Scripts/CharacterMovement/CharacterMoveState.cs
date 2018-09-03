@@ -97,6 +97,6 @@ namespace PartyBall.Scripts.CharacterMovement
         //Rolling
         public const float SlopAccereration = 0.03f;
 
-        public const float MaxiumSlopeScale = 1.5f;
+        public const float MaxiumSlopeScale = 1.3f;
     }
 }
