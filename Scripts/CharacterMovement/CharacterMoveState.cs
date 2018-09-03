@@ -65,37 +65,37 @@ namespace PartyBall.Scripts.CharacterMovement
     public static class CharacterMoveAbilities
     {  
         //Jump
-        public const float JumpTime = .5f;
+        public const float JumpTime = 0.25f;
 
-        public const float HoverTime = 0.5f;
+        public const float HoverTime = 0.25f;
 
         public const float HoverScale = 1.8f;
 
-        public const float JumpDownTime = .4f;
+        public const float JumpDownTime = 0.2f;
 
         //Fall
         public const float FallTime = 1.0f;
 
         //Slide
-        public const float SlideSpeed = 4.0f;
+        public const float SlideSpeed = 6.0f;
 
-        public const float WallMoveSpeed = 1.0f;
+        public const float WallMoveSpeed = 4.2f;
 
         public const float SlideEdgeScale = 0.3f;
 
         public const float InitAccerleratedTime = 2.0f;
 
         // Movement
-        public const float RollHorAcceleration = 0.1f;
+        public const float RollHorAcceleration = 0.2f;
 
-        public const float JumpHorAcceleration = 0.05f;
+        public const float JumpHorAcceleration = 0.12f;
 
-        public const float MaxiumHorizontalSpeed = 2.0f;
+        public const float MaxiumHorizontalSpeed = 4.0f;
 
-        public const float RollFowardSpeed = 2.5f;
+        public const float RollFowardSpeed = 5f;
 
         //Rolling
-        public const float SlopAccereration = 0.03f;
+        public const float SlopAccereration = 0.08f;
 
         public const float MaxiumSlopeScale = 1.5f;
     }

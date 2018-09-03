@@ -35,7 +35,7 @@ namespace PartyBall.Scripts.Entities
         private int _TimeSinceLastFrame = 0;
 
         //Update the animation per 100 millseconds
-        private int _MillisecondsPerFrame = 100;
+        private int _MillisecondsPerFrame = 50;
 
         public Character(Texture2D texture, Vector2 position) : base(position, texture)
         {

@@ -21,8 +21,6 @@ namespace PartyBall
         GameStates GameState;
         MenuOptions menuCursor;
         Rectangle rectBackground;
-        // Used to adjust the animation frame speed so it's not too fast or too slow
-        TimeSpan nextFrameInterval = TimeSpan.FromSeconds((float)1 / 16);
 
         public static Game1 Instance = null;
 
@@ -101,12 +99,14 @@ namespace PartyBall
                 case GameStates.Playing:
                     UpdateGamePlay(gameTime);
                     break;
+                default:
+                    break;
             }
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
-            this.CurLevel.Update(gameTime);
+            //this.CurLevel.Update(gameTime);
             base.Update(gameTime);
         }
 
