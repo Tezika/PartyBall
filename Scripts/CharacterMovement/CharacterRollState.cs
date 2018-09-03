@@ -64,6 +64,11 @@ namespace PartyBall.Scripts.CharacterMovement
                 }
             }
 
+            if (_CachedSegment == null)
+            {
+                return;
+            }
+
             var horVelocity = this.Character.Velocity.X;
             var scale = this.Character.Scale;
             var distance = 0.0f;

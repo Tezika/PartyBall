@@ -69,7 +69,7 @@ namespace PartyBall.Scripts.CharacterMovement
 
         public const float HoverTime = 0.5f;
 
-        public const float HoverScale = 1.5f;
+        public const float HoverScale = 1.8f;
 
         public const float JumpDownTime = .4f;
 
@@ -97,6 +97,6 @@ namespace PartyBall.Scripts.CharacterMovement
         //Rolling
         public const float SlopAccereration = 0.03f;
 
-        public const float MaxiumSlopeScale = 1.3f;
+        public const float MaxiumSlopeScale = 1.5f;
     }
 }

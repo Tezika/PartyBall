@@ -43,9 +43,9 @@ namespace PartyBall.Scripts.Level
             var layoutHeight = (float)(Graphics.PipeSegment_Middle.Height * 0.12f);
             this.Character = new Character(Graphics.Ball, Vector2.Zero);
 
-            this.LayoutPipes(graphicsDevice, 0.4f, layoutHeight);
+            this.LayoutPipes(graphicsDevice, layoutHeight);
             this.LayoutWalls(graphicsDevice, 0.25f, layoutHeight);
-            this.LayoutPickup(graphicsDevice, 1.0f, layoutHeight);
+            this.LayoutPickup(graphicsDevice, 0.125f, layoutHeight);
 
             this.GameObjects.Add(this.Character);
             this.GameObjects.AddRange(this.Pickups);
@@ -90,7 +90,7 @@ namespace PartyBall.Scripts.Level
             this.Camera.Update(gameTime ,this.Character);
         }
 
-        private void LayoutPipes(GraphicsDevice graphicsDevice, float scale, float layoutHeight)
+        private void LayoutPipes(GraphicsDevice graphicsDevice, float layoutHeight)
         {
             var pipe_1 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                  (float)(graphicsDevice.Viewport.Height - 0.5 * layoutHeight)));
@@ -98,80 +98,53 @@ namespace PartyBall.Scripts.Level
             var pipe_2 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                               (float)(graphicsDevice.Viewport.Height - 1.5 * layoutHeight)));
 
+            var pipe_0 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                            (float)(graphicsDevice.Viewport.Height - 2.5 * layoutHeight)));
+
             var pipe_3 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                              (float)(graphicsDevice.Viewport.Height - 2.5 * layoutHeight)),middle:false);
+                                              (float)(graphicsDevice.Viewport.Height - 4 * layoutHeight)));
 
             var pipe_4 = new Pipe (new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                               (float)(graphicsDevice.Viewport.Height - 3.5 * layoutHeight)));
+                                               (float)(graphicsDevice.Viewport.Height - 5 * layoutHeight)), middle: false);
 
             var pipe_5 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                              (float)(graphicsDevice.Viewport.Height - 4.5 * layoutHeight)),right: false);
+                                              (float)(graphicsDevice.Viewport.Height - 6 * layoutHeight)));
 
             var pipe_6 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                               (float)(graphicsDevice.Viewport.Height - 5.5 * layoutHeight)));
+                                              (float)(graphicsDevice.Viewport.Height - 7 * layoutHeight)), right: false);
 
             var pipe_7 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                               (float)(graphicsDevice.Viewport.Height - 6.5 * layoutHeight)));
+                                               (float)(graphicsDevice.Viewport.Height - 8 * layoutHeight)));
 
+            var pipe_8 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                              (float)(graphicsDevice.Viewport.Height - 9 * layoutHeight)), left:false);
 
+            var pipe_9 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                             (float)(graphicsDevice.Viewport.Height - 10.6 * layoutHeight)));
 
-            //var pipe_5 = new PipeSegment();
-            //var pipe_6 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
+            var pipe_10 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 13.3 * layoutHeight)));
 
-            //var pipe_7 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
+            var pipe_11 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 15.6 * layoutHeight)));
 
-            var pipe_8 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
-            var pipe_9 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
+            var pipe_12 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 18 * layoutHeight)));                           
 
-            var pipe_10 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
-            var pipe_11 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
-            var pipe_12 = new PipeSegment(Graphics.Pipe, Vector2.Zero, scale);
+            var pipe_14 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height  -  19 * layoutHeight)));
 
+            var pipe_15 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 20 * layoutHeight)), middle:false);
 
-            //pipe_1.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-            //                                     (float)(graphicsDevice.Viewport.Height - 0.5 * layoutHeight));
+            var pipe_16 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 21 * layoutHeight)), left:false);
 
-            //pipe_2.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       //(float)(graphicsDevice.Viewport.Height - 1.5 * layoutHeight));
+            var pipe_17 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                               (float)(graphicsDevice.Viewport.Height - 22 * layoutHeight)), right:false);
 
-            //pipe_3.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-            //                              (float)(graphicsDevice.Viewport.Height - 2.9 * layoutHeight));
-
-            //pipe_4.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       //(float)(graphicsDevice.Viewport.Height - 3.9 * layoutHeight));
-
-            //pipe_5.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-            //                                            (float)(graphicsDevice.Viewport.Height - 5.5 * layoutHeight));
-
-            //pipe_6.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-            //                                           (float)(graphicsDevice.Viewport.Height - 6.5 * layoutHeight));
-
-            //pipe_7.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                      //(float)(graphicsDevice.Viewport.Height - 8.1 * layoutHeight));
-
-            pipe_8.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                  (float)(graphicsDevice.Viewport.Height - 9.7 * layoutHeight));
-
-            pipe_9.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                  (float)(graphicsDevice.Viewport.Height - 10.7 * layoutHeight));
-
-
-            pipe_10.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                (float)(graphicsDevice.Viewport.Height - 13.3 * layoutHeight));
-
-
-            pipe_11.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                (float)(graphicsDevice.Viewport.Height - 15.6 * layoutHeight));
-
-            pipe_12.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                           (float)(graphicsDevice.Viewport.Height - 18 * layoutHeight));
-
-
-            this.Platforms.Add(pipe_8);
-            this.Platforms.Add(pipe_9);
-            this.Platforms.Add(pipe_10);
-            this.Platforms.Add(pipe_11);
-            this.Platforms.Add(pipe_12);
+            var pipe_18 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
+                                              (float)(graphicsDevice.Viewport.Height - 23 * layoutHeight)));
         }
 
         private void LayoutWalls(GraphicsDevice graphicsDevice, float scale, float layoutHeight)
@@ -198,10 +171,10 @@ namespace PartyBall.Scripts.Level
                                              (float)(graphicsDevice.Viewport.Height - 16.8 * layoutHeight));
 
             wall_5.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.2),
-                                           (float)(graphicsDevice.Viewport.Height - 19.2 * layoutHeight));
+                                           (float)(graphicsDevice.Viewport.Height - 24.1 * layoutHeight));
 
             wall_6.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.8),
-                                         (float)(graphicsDevice.Viewport.Height - 19.9 * layoutHeight));
+                                         (float)(graphicsDevice.Viewport.Height - 25.2 * layoutHeight));
 
 
             this.Platforms.Add(wall_1);
@@ -216,8 +189,9 @@ namespace PartyBall.Scripts.Level
         {
             var shadesPickup = new TestPickUp(Graphics.ShadesPickup, Vector2.Zero);
 
+            shadesPickup.Scale = scale;
             shadesPickup.Position = new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                                       (float)(graphicsDevice.Viewport.Height - 20.6 * layoutHeight));
+                                                       (float)(graphicsDevice.Viewport.Height - 26.2 * layoutHeight));
 
             this.Pickups.Add(shadesPickup);
 
