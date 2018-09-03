@@ -77,9 +77,9 @@ namespace PartyBall.Scripts.CharacterMovement
         public const float FallTime = 1.0f;
 
         //Slide
-        public const float SlideSpeed = 6.0f;
+        public const float SlideSpeed = 7.0f;
 
-        public const float WallMoveSpeed = 4.2f;
+        public const float WallMoveSpeed = 4.0f;
 
         public const float SlideEdgeScale = 0.3f;
 
@@ -88,7 +88,7 @@ namespace PartyBall.Scripts.CharacterMovement
         // Movement
         public const float RollHorAcceleration = 0.2f;
 
-        public const float JumpHorAcceleration = 0.12f;
+        public const float JumpHorAcceleration = 0.15f;
 
         public const float MaxiumHorizontalSpeed = 4.0f;
 
