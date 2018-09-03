@@ -40,7 +40,7 @@ namespace PartyBall.Scripts.Level
 
             //Load the content
             //Test level layout only by hard coding
-            var layoutHeight = (float)(Graphics.PipeSegment_Middle.Height * 0.15f);
+            var layoutHeight = (float)(Graphics.PipeSegment_Middle.Height * 0.12f);
             this.Character = new Character(Graphics.Ball, Vector2.Zero);
 
             this.LayoutPipes(graphicsDevice, 0.4f, layoutHeight);
@@ -99,13 +99,13 @@ namespace PartyBall.Scripts.Level
                                               (float)(graphicsDevice.Viewport.Height - 1.5 * layoutHeight)));
 
             var pipe_3 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                              (float)(graphicsDevice.Viewport.Height - 2.5 * layoutHeight)));
+                                              (float)(graphicsDevice.Viewport.Height - 2.5 * layoutHeight)),middle:false);
 
             var pipe_4 = new Pipe (new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                (float)(graphicsDevice.Viewport.Height - 3.5 * layoutHeight)));
 
             var pipe_5 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
-                                               (float)(graphicsDevice.Viewport.Height - 4.5 * layoutHeight)));
+                                              (float)(graphicsDevice.Viewport.Height - 4.5 * layoutHeight)),right: false);
 
             var pipe_6 = new Pipe(new Vector2((float)(graphicsDevice.Viewport.Width * 0.5),
                                                (float)(graphicsDevice.Viewport.Height - 5.5 * layoutHeight)));
